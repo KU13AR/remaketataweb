@@ -7,40 +7,176 @@ import { Button } from "@/components/ui/button";
 
 const references = [
   {
-    title: "Areál Poutního kostela P. Marie Horní Police",
-    year: "2021",
-    client: "Římskokatolická farnost Horní Police",
-    description: "Komplexní restaurátorské práce zahrnovaly obnovu fasád poutního kostela, restaurování sochařských prvků a architektonických detailů. Práce byly provedeny v souladu se záměry památkové péče s důrazem na zachování historické autenticity objektu. Součástí zakázky bylo provedení restaurátorského průzkumu, laboratorních analýz a kompletní dokumentace.",
-    scope: "Restaurování kamenných fasád, obnova štukových prvků, konservace sochařských děl, průzkumy a dokumentace"
+    period: "Oceněné projekty",
+    projects: [
+      {
+        title: "NKP Hospital Kuks – Generální rekonstrukce",
+        year: "2013–2015",
+        description: "Hlavní restaurátor kostela Nejsvětější Trojice a sochařských děl M.B. Brauna v areálu. Projekt oceněn titulem Stavba roku 2016 a Cenou Ministerstva kultury ČR.",
+        highlight: true
+      },
+      {
+        title: "Poutní areál kostela P. Marie, Horní Police",
+        year: "2019–2021",
+        description: "Restaurování kamenných prvků a sochařských děl poutního areálu. Ocenění v soutěži Stavba roku 2021 – Cena Ministerstva kultury ČR. Nominace na cenu NPÚ Patrimonium pro futuro (2022).",
+        highlight: true
+      },
+      {
+        title: "Mariánský sloup K. Videmanna, Plzeň",
+        year: "2020–2021",
+        description: "Komplexní restaurování historického Mariánského sloupu z roku 1681 na náměstí Republiky včetně zlacení.",
+        highlight: false
+      }
+    ]
   },
   {
-    title: "Mariánský sloup v Plzni",
-    year: "2022",
-    client: "Město Plzeň",
-    description: "Restaurování historického Mariánského sloupu v centru Plzně představovalo náročnou práci na exponovaném památkovém objektu. Práce zahrnovaly komplexní konservaci kamenných prvků, obnovu sochařských detailů a ošetření povrchů. Veškeré práce byly koordinovány s Národním památkovým ústavem.",
-    scope: "Restaurování kamenné konstrukce sloupu, konservace sochařských prvků, ošetření povrchů, průzkumy"
+    period: "Klíčové realizace 2003–2016",
+    projects: [
+      {
+        title: "Sousoší Korunovace P. Marie, Starý Rokytník",
+        year: "2016",
+        description: "Kompletní rekonstrukce barokního sousoší zahrnující restaurování kamene a štuku s doplněním chybějících částí."
+      },
+      {
+        title: "Chrám sv. Barbory, Kutná Hora",
+        year: "2011",
+        description: "Restaurování vnějšího pláště národní kulturní památky."
+      },
+      {
+        title: "Sluneční brána M.B. Brauna, zámek Hořovice",
+        year: "2010",
+        description: "Restaurování významného barokního díla s podrobným průzkumem a konservací kamenných prvků."
+      },
+      {
+        title: "Liebiegova vila (A. Burger, 1902), Liberec",
+        year: "2010",
+        description: "Rekonstrukce historické vily z počátku 20. století."
+      },
+      {
+        title: "Křížová cesta, Františkánský klášter Kadaň",
+        year: "2007",
+        description: "Restaurování křížové cesty v klášterním areálu."
+      },
+      {
+        title: "Fontána Napájení Héliových koní I.F. Platzera, zámek Dobříš",
+        year: "2006–2008",
+        description: "Víceetapové restaurování barokní fontány."
+      },
+      {
+        title: "Městské lázně (A. Burger, 1902), Liberec",
+        year: "2006–2009",
+        description: "Víceetapová rekonstrukce historického lázeňského objektu."
+      },
+      {
+        title: "Čtyři roční období M.B. Brauna, Teplice",
+        year: "2005",
+        description: "Restaurování sochařských děl M.B. Brauna v Zahradním a plesovém domě."
+      },
+      {
+        title: "Mariánský sloup G.B. Bully, Hradec Králové",
+        year: "2004",
+        description: "Restaurování Mariánského sloupu na Velkém náměstí."
+      },
+      {
+        title: "Transfér šesti soch I.F. Platzera, zámek Dobříš",
+        year: "2004",
+        description: "Odborný přesun a instalace barokních soch."
+      },
+      {
+        title: "Sousoší Kalvárie, Benešov nad Ploučnicí",
+        year: "2003",
+        description: "Restaurování sochařské skupiny Kalvárie."
+      }
+    ]
   },
   {
-    title: "Rekonstrukce sousoší Korunovace Panny Marie v Rokytníku u Trutnova",
-    year: "2016",
-    client: "Obec Rokytník v Orlických horách",
-    description: "Kompletní rekonstrukce barokního sousoší zahrnovala restaurování kamene a štuku, doplnění chybějících částí a celkovou konservaci díla. Práce vyžadovaly specializované řemeslné dovednosti a znalost historických materiálů a postupů. Výsledkem je kompletně obnovené sousoší splňující vysoké nároky památkové péče.",
-    scope: "Restaurování kamenných a štukových prvků, rekonstrukce chybějících částí, konservace, dokumentace"
+    period: "Významné projekty 1993–2002",
+    projects: [
+      {
+        title: "Sousoší Kalvárie a tři portály, klášter Broumov NKP",
+        year: "2002",
+        description: "Restaurování sochařské výzdoby a architektonických prvků národní kulturní památky."
+      },
+      {
+        title: "Muzeum východních Čech (J. Kotěra) NKP, Hradec Králové",
+        year: "2000–2002",
+        description: "Rekonstrukce interiérů modernistické budovy s odborným dozorem."
+      },
+      {
+        title: "Dvorana Akademie věd NKP, Národní třída Praha",
+        year: "1998",
+        description: "Restaurování interiéru historické dvorany."
+      },
+      {
+        title: "Zvonice chrámu sv. Mikuláše, Malá Strana",
+        year: "1996",
+        description: "Rekonstrukce fasád zvonice na Malé Straně v Praze."
+      },
+      {
+        title: "Astronomická věž Klementina NKP",
+        year: "1990s",
+        description: "Rekonstrukce fasád včetně sochy Atlanta od M.B. Brauna."
+      },
+      {
+        title: "Mariánský sloup M.B. Brauna, Jaroměř",
+        year: "1992–1996",
+        description: "Restaurování a vytvoření kopií na významném barokním sloupu."
+      }
+    ]
   },
   {
-    title: "Kuks Hospital",
-    year: "2013-2015",
-    client: "Nemocnice Kuks",
-    description: "Rozsáhlé restaurátorské práce na hospitálním komplexu v Kuksu představovaly jeden z nejvýznamnějších projektů na díle Matyáše Bernarda Brauna. Projekt zahrnoval restaurování exteriérových i interiérových prvků, včetně monumentálních alegorických soch. Práce probíhaly ve více etapách s kontinuální koordinací s památkovou péčí.",
-    scope: "Restaurování monumentálních sochařských děl M. B. Brauna, obnova fasád, konservace štukových výzdoby, průzkumy a dokumentace"
+    period: "Mariánské a trojiční sloupy 1985–1994",
+    projects: [
+      {
+        title: "Mariánské a trojiční sloupy",
+        year: "1985–1994",
+        description: "Série restaurátorských prací na mariánských a trojiních sloupech: Odolená Voda (1985), Vizovice (1986), Žatec (1987), Klášterec nad Ohří (1988), Skuteč (1991), Ústí nad Orlicí (1994)."
+      }
+    ]
   },
   {
-    title: "Sluneční brána od M.B. Brauna na Zámku v Hořovicích",
-    year: "2010",
-    client: "Národní památkový ústav",
-    description: "Restaurování významného barokního díla od Matyáše Bernarda Brauna vyžadovalo maximální odbornost a citlivý přístup. Projekt zahrnoval podrobný restaurátorský průzkum, konservaci a částečnou rekonstrukci kamenných prvků. Výsledkem je zachování tohoto unikátního uměleckého díla pro budoucí generace.",
-    scope: "Restaurátorský průzkum, konservace kamenných prvků, částečná rekonstrukce, dokumentace"
+    period: "Restaurátorské zakázky 1981–1996",
+    projects: [
+      {
+        title: "Obecní dům, Praha",
+        year: "1995–1996",
+        description: "Restaurování architektury a sochařské výzdoby secesní budovy."
+      },
+      {
+        title: "Prašná brána, Praha",
+        year: "1991–1992",
+        description: "Restaurování sochařské výzdoby gotické brány."
+      },
+      {
+        title: "Sousoší sv. Jana z Mathy a Fr. Xaverského, Karlův most",
+        year: "1986–1988",
+        description: "Restaurování barokního sousoší od F.M. Brokofa na Karlově mostě."
+      },
+      {
+        title: "Reliéf Ukřižování, chrám P. Marie před Týnem",
+        year: "1986–1988",
+        description: "Kopie reliéfu severního portálu gotického chrámu."
+      },
+      {
+        title: "Socha Minervy od M.B. Brauna, Clam-Gallasův palác",
+        year: "1986",
+        description: "Kopie barokní sochy pro pražský palác."
+      },
+      {
+        title: "Socha sv. Jana Evangelisty, Kalvárie Na Pohořelci",
+        year: "1981",
+        description: "Kopie sochy pro pražskou Kalvárii."
+      }
+    ]
   }
+];
+
+const collaborators = "Dlouhodobá spolupráce s předními restaurátory: Jiří Švec, Petr Siegl, Jiří Živný, Jiří Středa, Jiří Seifert, Lenka Beranová a další. Stálý tým od 2003: Ing. Oldřich Hnětynka, Nina Jindřichová, David Seidl, Eduard Boris, Daniel Bartoš.";
+
+const professionalActivities = [
+  "Člen odborné komise pro restaurování a konzervaci památek Ministerstva kultury ČR (1994–1999)",
+  "Člen Umělecké rady Fakulty restaurování Univerzity Pardubice v Litomyšli (od 2006)",
+  "Člen Asociace restaurátorů (od 1992)"
 ];
 
 const References = () => {
@@ -60,36 +196,77 @@ const References = () => {
           </div>
 
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Detailní reference</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Přehled realizovaných restaurátorských projektů s podrobným popisem prací
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Referenční práce</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Přehled realizovaných restaurátorských projektů za více než 40 let odborné praxe
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-8">
-            {references.map((reference, index) => (
-              <Card key={index} className="shadow-soft hover:shadow-elegant transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-start justify-between gap-4 mb-2">
-                    <CardTitle className="text-2xl">{reference.title}</CardTitle>
-                    <span className="text-lg font-semibold text-primary shrink-0">{reference.year}</span>
-                  </div>
-                  <CardDescription className="text-base font-medium">
-                    Zadavatel: {reference.client}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold mb-2 text-foreground">Popis projektu:</h4>
-                    <p className="text-muted-foreground leading-relaxed">{reference.description}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2 text-foreground">Rozsah prací:</h4>
-                    <p className="text-muted-foreground leading-relaxed">{reference.scope}</p>
-                  </div>
+          <div className="max-w-5xl mx-auto space-y-12">
+            {references.map((section, sectionIndex) => (
+              <div key={sectionIndex} className="space-y-6">
+                <h2 className="text-3xl font-bold text-primary border-b pb-3">
+                  {section.period}
+                </h2>
+                <div className="grid gap-6">
+                  {section.projects.map((project, projectIndex) => (
+                    <Card 
+                      key={projectIndex} 
+                      className={`shadow-soft hover:shadow-elegant transition-all duration-300 ${
+                        project.highlight ? 'border-primary/50' : ''
+                      }`}
+                    >
+                      <CardHeader>
+                        <div className="flex items-start justify-between gap-4">
+                          <CardTitle className="text-xl">{project.title}</CardTitle>
+                          <span className="text-base font-semibold text-primary shrink-0">
+                            {project.year}
+                          </span>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {project.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            ))}
+
+            {/* Professional Activities Section */}
+            <div className="mt-16 space-y-6">
+              <h2 className="text-3xl font-bold text-primary border-b pb-3">
+                Profesní aktivity
+              </h2>
+              <Card className="shadow-soft">
+                <CardContent className="pt-6">
+                  <ul className="space-y-3">
+                    {professionalActivities.map((activity, index) => (
+                      <li key={index} className="text-muted-foreground leading-relaxed flex items-start gap-3">
+                        <span className="text-primary mt-1.5">•</span>
+                        <span>{activity}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
-            ))}
+            </div>
+
+            {/* Collaborators Section */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-primary border-b pb-3">
+                Spolupracující restaurátoři
+              </h2>
+              <Card className="shadow-soft">
+                <CardContent className="pt-6">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {collaborators}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           <div className="mt-16 text-center">
