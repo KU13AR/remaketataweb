@@ -44,6 +44,8 @@ export const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-soft">
+      {/* Decorative relief pattern border */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-accent opacity-30" />
       
       <div className="container px-4 py-3">
         <div className="flex flex-col items-center gap-3">
