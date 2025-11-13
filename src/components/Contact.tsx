@@ -26,9 +26,12 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Kontaktujte mě pro nezávaznou poptávku
-                    </p>
+                    <a 
+                      href="mailto:vichrest1@seznam.cz"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                    >
+                      vichrest1@seznam.cz
+                    </a>
                   </div>
                 </div>
 
@@ -38,9 +41,12 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Telefon</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Pro rychlou konzultaci
-                    </p>
+                    <a 
+                      href="tel:+420605268730"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                    >
+                      +420 605 268 730
+                    </a>
                   </div>
                 </div>
 
@@ -49,9 +55,11 @@ export const Contact = () => {
                     <MapPin className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Působnost</h3>
+                    <h3 className="font-semibold mb-1">Adresa</h3>
                     <p className="text-muted-foreground text-sm">
-                      Celá Česká republika
+                      Pod Saharou 712<br />
+                      252 66 Libčice nad Vltavou<br />
+                      Czech Republic
                     </p>
                   </div>
                 </div>
