@@ -5,7 +5,7 @@ export const Footer = () => {
     <footer className="bg-foreground text-background py-12 relative overflow-hidden">
       {/* Decorative relief pattern */}
       <div 
-        className="absolute top-0 left-0 right-0 h-32 opacity-5 bg-cover bg-center"
+        className="absolute top-0 left-0 right-0 h-32 opacity-15 bg-cover bg-center"
         style={{ 
           backgroundImage: `url(${reliefPattern})`,
           maskImage: 'linear-gradient(to bottom, white, transparent)',
