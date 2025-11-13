@@ -45,8 +45,8 @@ export const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-soft">
       
-      <div className="container px-4 py-4">
-        <div className="flex items-center justify-between">
+      <div className="container px-4 py-3">
+        <div className="flex flex-col items-center gap-3">
           <button 
             onClick={() => navigate("/")}
             className="text-2xl font-bold tracking-tight hover:text-primary transition-colors"
@@ -54,13 +54,13 @@ export const Navigation = () => {
             Jan Vích
           </button>
 
-          {/* Navigation - responsive horizontal layout */}
-          <div className="flex items-center gap-2 sm:gap-4 md:gap-8 overflow-x-auto">
+          {/* Navigation - horizontal layout under name */}
+          <div className="flex items-center gap-3 sm:gap-6 md:gap-8 overflow-x-auto w-full justify-center">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href, item.isPage)}
-                className="text-foreground hover:text-primary transition-colors font-medium whitespace-nowrap text-sm sm:text-base"
+                className="text-foreground hover:text-primary transition-colors font-bold whitespace-nowrap text-base sm:text-lg"
               >
                 {item.label}
               </button>
