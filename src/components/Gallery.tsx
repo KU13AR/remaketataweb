@@ -1,11 +1,19 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+interface Photo {
+  url: string;
+  caption?: string;
+}
 
 interface Project {
   title: string;
   year: string;
   description: string;
-  imageUrl: string;
-  photos: number;
+  photos: Photo[];
 }
 
 const projects: Project[] = [
@@ -13,61 +21,124 @@ const projects: Project[] = [
     title: "Areál Poutního kostela P. Marie Horní Police",
     year: "2021",
     description: "Komplexní restaurátorské práce na areálu poutního kostela včetně fasád a sochařských prvků",
-    imageUrl: "https://jan-vich.estranky.cz/img/mid/122.jpg",
-    photos: 6
+    photos: [
+      { url: "https://jan-vich.estranky.cz/img/original/122.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/120.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/121.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/123.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/124.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/119.jpg" }
+    ]
   },
   {
     title: "Mariánský sloup v Plzni",
     year: "2022",
     description: "Restaurování historického Mariánského sloupu v centru Plzně",
-    imageUrl: "https://jan-vich.estranky.cz/img/mid/113.jpg",
-    photos: 5
+    photos: [
+      { url: "https://jan-vich.estranky.cz/img/original/113.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/114.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/115.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/116.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/117.jpg" }
+    ]
   },
   {
     title: "Rekonstrukce sousoší Korunovace Panny Marie v Rokytníku u Trutnova",
     year: "2016",
     description: "Kompletní rekonstrukce barokního sousoší včetně restaurování kamene a štuku",
-    imageUrl: "https://jan-vich.estranky.cz/img/mid/101.jpg",
-    photos: 7
+    photos: [
+      { url: "https://jan-vich.estranky.cz/img/original/101.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/102.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/103.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/104.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/105.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/106.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/107.jpg" }
+    ]
   },
   {
     title: "Kuks Hospital",
     year: "2013-2015",
     description: "Rozsáhlé restaurátorské práce na hospitálním komplexu v Kuksu - dílo M. B. Brauna",
-    imageUrl: "https://jan-vich.estranky.cz/img/mid/83.jpg",
-    photos: 17
+    photos: [
+      { url: "https://jan-vich.estranky.cz/img/original/83.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/84.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/85.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/86.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/87.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/88.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/89.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/90.jpg" }
+    ]
   },
   {
     title: "Sluneční brána od M.B. Brauna na Zámku v Hořovicích",
     year: "2010",
     description: "Restaurování významného barokního díla od Matyáše Bernarda Brauna",
-    imageUrl: "https://jan-vich.estranky.cz/img/mid/60.jpg",
-    photos: 23
+    photos: [
+      { url: "https://jan-vich.estranky.cz/img/original/60.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/61.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/62.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/63.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/64.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/65.jpg" }
+    ]
   },
   {
     title: "Rekonstrukce Městských lázní v Liberci",
     year: "2009",
     description: "Obnova historických fasád a architektonických prvků budovy městských lázní",
-    imageUrl: "https://jan-vich.estranky.cz/img/mid/44.jpg",
-    photos: 15
+    photos: [
+      { url: "https://jan-vich.estranky.cz/img/original/44.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/45.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/46.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/47.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/48.jpg" }
+    ]
   },
   {
     title: "Zámek Dobříš - Francouzská zahrada",
     year: "2008",
     description: "Restaurování sochařských prvků a kamenných balustrad ve francouzské zahradě",
-    imageUrl: "https://jan-vich.estranky.cz/img/mid/39.jpg",
-    photos: 6
-  },
-  {
-    title: "Zpevňování pod sníženým tlakem",
-    year: "2007",
-    description: "Specializovaná technika restaurování s použitím zpevňování pod sníženým tlakem",
-    imageUrl: "https://jan-vich.estranky.cz/img/mid/27.jpg",
-    photos: 5
+    photos: [
+      { url: "https://jan-vich.estranky.cz/img/original/39.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/40.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/41.jpg" },
+      { url: "https://jan-vich.estranky.cz/img/original/42.jpg" }
+    ]
   }
 ];
 
 export const Gallery = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+
+  const openGallery = (project: Project, photoIndex: number = 0) => {
+    setSelectedProject(project);
+    setCurrentPhotoIndex(photoIndex);
+  };
+
+  const closeGallery = () => {
+    setSelectedProject(null);
+    setCurrentPhotoIndex(0);
+  };
+
+  const nextPhoto = () => {
+    if (selectedProject) {
+      setCurrentPhotoIndex((prev) => 
+        prev === selectedProject.photos.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
+
+  const prevPhoto = () => {
+    if (selectedProject) {
+      setCurrentPhotoIndex((prev) => 
+        prev === 0 ? selectedProject.photos.length - 1 : prev - 1
+      );
+    }
+  };
+
   return (
     <section id="galerie" className="py-20 bg-card">
       <div className="container px-4">
@@ -79,11 +150,11 @@ export const Gallery = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
-              <div className="aspect-[4/3] overflow-hidden bg-muted">
+          {projects.map((project, projectIndex) => (
+            <Card key={projectIndex} className="overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-300">
+              <div className="aspect-[4/3] overflow-hidden bg-muted cursor-pointer" onClick={() => openGallery(project, 0)}>
                 <img 
-                  src={project.imageUrl} 
+                  src={project.photos[0].url} 
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   loading="lazy"
@@ -95,13 +166,40 @@ export const Gallery = () => {
                     {project.year}
                   </span>
                   <span className="text-xs text-muted-foreground">
-                    {project.photos} fotografií
+                    {project.photos.length} fotografií
                   </span>
                 </div>
                 <CardTitle className="text-lg leading-tight">{project.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-sm">{project.description}</CardDescription>
+                <CardDescription className="text-sm mb-4">{project.description}</CardDescription>
+                
+                {/* Thumbnail grid */}
+                <div className="grid grid-cols-4 gap-2">
+                  {project.photos.slice(0, 4).map((photo, photoIndex) => (
+                    <div 
+                      key={photoIndex}
+                      className="aspect-square overflow-hidden rounded-md cursor-pointer hover:opacity-75 transition-opacity"
+                      onClick={() => openGallery(project, photoIndex)}
+                    >
+                      <img 
+                        src={photo.url} 
+                        alt={`${project.title} ${photoIndex + 1}`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+                
+                {project.photos.length > 4 && (
+                  <button
+                    onClick={() => openGallery(project, 0)}
+                    className="mt-3 text-sm text-primary hover:text-primary/80 transition-colors"
+                  >
+                    Zobrazit všech {project.photos.length} fotografií →
+                  </button>
+                )}
               </CardContent>
             </Card>
           ))}
@@ -109,7 +207,7 @@ export const Gallery = () => {
 
         <div className="text-center mt-12 space-y-4">
           <p className="text-muted-foreground">
-            Pro detailní fotografie a kompletní portfolium prací prosím kontaktujte
+            Klikněte na fotografii pro zobrazení detailu
           </p>
           <div className="flex flex-wrap gap-4 justify-center text-sm">
             <span className="text-primary">• Historické památky UNESCO</span>
@@ -119,6 +217,73 @@ export const Gallery = () => {
           </div>
         </div>
       </div>
+
+      {/* Fullscreen Gallery Dialog */}
+      <Dialog open={!!selectedProject} onOpenChange={closeGallery}>
+        <DialogContent className="max-w-6xl h-[90vh] p-0">
+          {selectedProject && (
+            <>
+              <DialogHeader className="p-6 pb-0">
+                <DialogTitle className="text-2xl">
+                  {selectedProject.title}
+                  <span className="text-base font-normal text-muted-foreground ml-3">
+                    ({currentPhotoIndex + 1} / {selectedProject.photos.length})
+                  </span>
+                </DialogTitle>
+              </DialogHeader>
+              
+              <div className="relative flex-1 flex items-center justify-center p-6 bg-muted/30">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background"
+                  onClick={prevPhoto}
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
+
+                <img
+                  src={selectedProject.photos[currentPhotoIndex].url}
+                  alt={`${selectedProject.title} ${currentPhotoIndex + 1}`}
+                  className="max-h-full max-w-full object-contain"
+                />
+
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background"
+                  onClick={nextPhoto}
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
+              </div>
+
+              {/* Thumbnail strip */}
+              <div className="p-4 border-t bg-background">
+                <div className="flex gap-2 overflow-x-auto">
+                  {selectedProject.photos.map((photo, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentPhotoIndex(index)}
+                      className={`flex-shrink-0 w-20 h-20 rounded overflow-hidden border-2 transition-all ${
+                        index === currentPhotoIndex 
+                          ? 'border-primary' 
+                          : 'border-transparent hover:border-primary/50'
+                      }`}
+                    >
+                      <img
+                        src={photo.url}
+                        alt={`Náhled ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
