@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
   { label: "O mně", href: "#o-mne" },
@@ -15,6 +15,7 @@ export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,13 +31,31 @@ export const Navigation = () => {
       navigate(href);
       setIsMobileMenuOpen(false);
     } else {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+      // Pokud nejsme na hlavní stránce, navigujeme tam s hash
+      if (location.pathname !== "/") {
+        navigate("/" + href);
         setIsMobileMenuOpen(false);
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          setIsMobileMenuOpen(false);
+        }
       }
     }
   };
+
+  // Scrollování na sekci po navigaci z jiné stránky
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <nav 
@@ -49,7 +68,7 @@ export const Navigation = () => {
       <div className="container px-4 py-4">
         <div className="flex items-center justify-between">
           <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => navigate("/")}
             className="text-2xl font-bold tracking-tight hover:text-primary transition-colors"
           >
             Jan Vích
