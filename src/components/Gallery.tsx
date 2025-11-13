@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 // Import photos
 import horniPolice1 from "@/assets/gallery/horni-police-1.jpg";
@@ -232,6 +233,11 @@ export const Gallery = () => {
           <p className="text-muted-foreground">
             Klikněte na fotografii pro zobrazení detailu
           </p>
+          <Link to="/reference">
+            <Button variant="outline" className="mt-4">
+              Reference - detailní popis
+            </Button>
+          </Link>
           <div className="flex flex-wrap gap-4 justify-center text-sm">
             <span className="text-primary">• Historické památky UNESCO</span>
             <span className="text-primary">• Kamenná architektura</span>
