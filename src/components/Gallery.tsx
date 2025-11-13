@@ -11,6 +11,11 @@ import horniPolice3 from "@/assets/gallery/horni-police-3.jpg";
 import horniPolice4 from "@/assets/gallery/horni-police-4.jpg";
 import horniPolice5 from "@/assets/gallery/horni-police-5.jpg";
 import horniPolice6 from "@/assets/gallery/horni-police-6.jpg";
+import marianskesloup1 from "@/assets/gallery/marianske-sloup-1.jpg";
+import marianskesloup2 from "@/assets/gallery/marianske-sloup-2.jpg";
+import marianskesloup3 from "@/assets/gallery/marianske-sloup-3.jpg";
+import marianskesloup4 from "@/assets/gallery/marianske-sloup-4.jpg";
+import marianskesloup5 from "@/assets/gallery/marianske-sloup-5.jpg";
 
 interface Photo {
   url: string;
@@ -43,8 +48,11 @@ const projects: Project[] = [
     year: "2022",
     description: "Restaurování historického Mariánského sloupu v centru Plzně",
     photos: [
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Mariánský+sloup+1" },
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Mariánský+sloup+2" }
+      { url: marianskesloup1 },
+      { url: marianskesloup2 },
+      { url: marianskesloup3 },
+      { url: marianskesloup4 },
+      { url: marianskesloup5 }
     ]
   },
   {
