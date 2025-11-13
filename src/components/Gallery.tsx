@@ -243,10 +243,10 @@ export const Gallery = () => {
 
       {/* Fullscreen Gallery Dialog */}
       <Dialog open={!!selectedProject} onOpenChange={closeGallery}>
-        <DialogContent className="max-w-6xl h-[90vh] p-0">
+        <DialogContent className="max-w-7xl h-[95vh] p-0">
           {selectedProject && (
             <>
-              <DialogHeader className="p-6 pb-0">
+              <DialogHeader className="px-6 pt-6 pb-4">
                 <DialogTitle className="text-2xl">
                   {selectedProject.title}
                   <span className="text-base font-normal text-muted-foreground ml-3">
@@ -255,49 +255,51 @@ export const Gallery = () => {
                 </DialogTitle>
               </DialogHeader>
               
-              <div className="relative flex-1 flex items-center justify-center p-6 bg-muted/30">
+              <div className="relative flex-1 flex items-center justify-center px-4 py-2 bg-muted/30">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background shadow-lg h-12 w-12"
                   onClick={prevPhoto}
                 >
-                  <ChevronLeft className="h-6 w-6" />
+                  <ChevronLeft className="h-8 w-8" />
                 </Button>
 
                 <img
                   src={selectedProject.photos[currentPhotoIndex].url}
                   alt={`${selectedProject.title} ${currentPhotoIndex + 1}`}
-                  className="max-h-full max-w-full object-contain"
+                  className="max-h-[calc(95vh-200px)] max-w-full object-contain"
+                  loading="lazy"
                 />
 
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background shadow-lg h-12 w-12"
                   onClick={nextPhoto}
                 >
-                  <ChevronRight className="h-6 w-6" />
+                  <ChevronRight className="h-8 w-8" />
                 </Button>
               </div>
 
               {/* Thumbnail strip */}
-              <div className="p-4 border-t bg-background">
-                <div className="flex gap-2 overflow-x-auto">
+              <div className="px-4 pb-4 pt-2 border-t bg-background">
+                <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
                   {selectedProject.photos.map((photo, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentPhotoIndex(index)}
-                      className={`flex-shrink-0 w-20 h-20 rounded overflow-hidden border-2 transition-all ${
+                      className={`flex-shrink-0 w-24 h-24 rounded-md overflow-hidden border-2 transition-all hover:scale-105 ${
                         index === currentPhotoIndex 
-                          ? 'border-primary' 
-                          : 'border-transparent hover:border-primary/50'
+                          ? 'border-primary shadow-md' 
+                          : 'border-border hover:border-primary/50'
                       }`}
                     >
                       <img
                         src={photo.url}
                         alt={`Náhled ${index + 1}`}
                         className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                     </button>
                   ))}
