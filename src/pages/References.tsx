@@ -195,13 +195,6 @@ const References = () => {
             </Link>
           </div>
 
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Referenční práce</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Přehled realizovaných restaurátorských projektů za více než 40 let odborné praxe
-            </p>
-          </div>
-
           <div className="max-w-5xl mx-auto space-y-12">
             {references.map((section, sectionIndex) => (
               <div key={sectionIndex} className="space-y-6">
