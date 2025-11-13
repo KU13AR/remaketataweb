@@ -4,7 +4,7 @@ export const About = () => {
       <div className="container px-4">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-            Vítám Vás na mých stránkách
+            O mně
           </h2>
           
           <div className="prose prose-lg max-w-none space-y-6 text-foreground">
