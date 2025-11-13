@@ -25,7 +25,8 @@ export const Navigation = () => {
       } else {
         const element = document.querySelector(href);
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+          const offsetTop = element.getBoundingClientRect().top + window.scrollY - 120;
+          window.scrollTo({ top: offsetTop, behavior: "smooth" });
         }
       }
     }
@@ -37,7 +38,8 @@ export const Navigation = () => {
       setTimeout(() => {
         const element = document.querySelector(location.hash);
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+          const offsetTop = element.getBoundingClientRect().top + window.scrollY - 120;
+          window.scrollTo({ top: offsetTop, behavior: "smooth" });
         }
       }, 100);
     }
