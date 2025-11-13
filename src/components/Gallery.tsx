@@ -16,6 +16,13 @@ import marianskesloup2 from "@/assets/gallery/marianske-sloup-2.jpg";
 import marianskesloup3 from "@/assets/gallery/marianske-sloup-3.jpg";
 import marianskesloup4 from "@/assets/gallery/marianske-sloup-4.jpg";
 import marianskesloup5 from "@/assets/gallery/marianske-sloup-5.jpg";
+import rokytnik1 from "@/assets/gallery/rokytnik-1.jpg";
+import rokytnik2 from "@/assets/gallery/rokytnik-2.jpg";
+import rokytnik3 from "@/assets/gallery/rokytnik-3.jpg";
+import rokytnik4 from "@/assets/gallery/rokytnik-4.jpg";
+import rokytnik5 from "@/assets/gallery/rokytnik-5.jpg";
+import rokytnik6 from "@/assets/gallery/rokytnik-6.jpg";
+import rokytnik7 from "@/assets/gallery/rokytnik-7.jpg";
 
 interface Photo {
   url: string;
@@ -60,8 +67,13 @@ const projects: Project[] = [
     year: "2016",
     description: "Kompletní rekonstrukce barokního sousoší včetně restaurování kamene a štuku",
     photos: [
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Rokytník+1" },
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Rokytník+2" }
+      { url: rokytnik1 },
+      { url: rokytnik2 },
+      { url: rokytnik3 },
+      { url: rokytnik4 },
+      { url: rokytnik5 },
+      { url: rokytnik6 },
+      { url: rokytnik7 }
     ]
   },
   {
