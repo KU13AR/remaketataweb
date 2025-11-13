@@ -23,6 +23,16 @@ import rokytnik4 from "@/assets/gallery/rokytnik-4.jpg";
 import rokytnik5 from "@/assets/gallery/rokytnik-5.jpg";
 import rokytnik6 from "@/assets/gallery/rokytnik-6.jpg";
 import rokytnik7 from "@/assets/gallery/rokytnik-7.jpg";
+import kuks1 from "@/assets/gallery/kuks-1.jpg";
+import kuks2 from "@/assets/gallery/kuks-2.jpg";
+import kuks3 from "@/assets/gallery/kuks-3.jpg";
+import kuks4 from "@/assets/gallery/kuks-4.jpg";
+import kuks5 from "@/assets/gallery/kuks-5.jpg";
+import kuks6 from "@/assets/gallery/kuks-6.jpg";
+import kuks7 from "@/assets/gallery/kuks-7.jpg";
+import kuks8 from "@/assets/gallery/kuks-8.jpg";
+import kuks9 from "@/assets/gallery/kuks-9.jpg";
+import kuks10 from "@/assets/gallery/kuks-10.jpg";
 
 interface Photo {
   url: string;
@@ -81,8 +91,16 @@ const projects: Project[] = [
     year: "2013-2015",
     description: "Rozsáhlé restaurátorské práce na hospitálním komplexu v Kuksu - dílo M. B. Brauna",
     photos: [
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Kuks+1" },
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Kuks+2" }
+      { url: kuks1 },
+      { url: kuks2 },
+      { url: kuks3 },
+      { url: kuks4 },
+      { url: kuks5 },
+      { url: kuks6 },
+      { url: kuks7 },
+      { url: kuks8 },
+      { url: kuks9 },
+      { url: kuks10 }
     ]
   },
   {
