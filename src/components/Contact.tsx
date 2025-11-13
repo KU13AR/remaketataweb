@@ -70,9 +70,17 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Povolení</h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-muted-foreground text-sm mb-2">
                       MK ČR č. 6278/91 a 8.001/96
                     </p>
+                    <a 
+                      href="https://rrkp.mkcr.cz/rejstrik/9dwBB4Q" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary text-sm hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+                    >
+                      Rejstřík MK ČR →
+                    </a>
                   </div>
                 </div>
               </div>
