@@ -99,34 +99,6 @@ export const Contact = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="border-t pt-6 mt-6">
-                <h3 className="font-semibold mb-4 text-center">Reference a publikace</h3>
-                <div className="space-y-3 text-sm text-muted-foreground">
-                  <p className="text-center">
-                    Rád poskytnu reference na realizované projekty a další informace o své práci
-                  </p>
-                  <div className="flex gap-4 justify-center flex-wrap">
-                    <a 
-                      href="http://www.socharstvi.webgarden.cz/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80 transition-colors"
-                    >
-                      Sochařský a štukatérský ateliér
-                    </a>
-                    <span className="text-border">•</span>
-                    <a 
-                      href="http://www.kamenictviman.cz/index.htm" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80 transition-colors"
-                    >
-                      Kamenictví Man
-                    </a>
-                  </div>
-                </div>
-              </div>
             </CardContent>
           </Card>
         </div>
