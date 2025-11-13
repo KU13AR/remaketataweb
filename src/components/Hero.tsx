@@ -1,15 +1,6 @@
-import heroImage from "@/assets/hero-restoration.jpg";
-
 export const Hero = () => {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
-      </div>
-      
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-hero">
       <div className="container relative z-10 px-4 py-20 text-center">
         <div className="mx-auto max-w-3xl space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
