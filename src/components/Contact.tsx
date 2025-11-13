@@ -8,7 +8,7 @@ export const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Kontakt</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Rádi zodpovíme Vaše dotazy a probereme možnosti spolupráce
+            Rád zodpovím Vaše dotazy a probereme možnosti spolupráce
           </p>
         </div>
 
