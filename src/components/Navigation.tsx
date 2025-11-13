@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import reliefPattern from "@/assets/relief-pattern.jpg";
 
 const navItems = [
   { label: "O mně", href: "#o-mne" },
@@ -43,8 +44,16 @@ export const Navigation = () => {
   }, [location]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-soft">
-      {/* Decorative relief pattern border */}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-soft relative overflow-hidden">
+      {/* Decorative relief pattern */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-32 opacity-15 bg-cover bg-center"
+        style={{ 
+          backgroundImage: `url(${reliefPattern})`,
+          maskImage: 'linear-gradient(to top, white, transparent)',
+          WebkitMaskImage: 'linear-gradient(to top, white, transparent)'
+        }}
+      />
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-accent opacity-30" />
       
       <div className="container px-4 py-3">
