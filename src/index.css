@@ -8,42 +8,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Elegant restoration theme - warm, earthy tones */
-    --background: 40 30% 97%;
-    --foreground: 30 15% 25%;
+    /* Stone and limestone restoration theme - elegant grays */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
 
-    --card: 40 25% 98%;
-    --card-foreground: 30 15% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
 
-    --popover: 40 25% 98%;
-    --popover-foreground: 30 15% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
 
-    --primary: 25 60% 45%;
-    --primary-foreground: 40 30% 98%;
+    --primary: 0 0% 25%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 35 40% 88%;
-    --secondary-foreground: 30 15% 25%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 35 25% 92%;
-    --muted-foreground: 30 10% 45%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 45 85% 55%;
-    --accent-foreground: 30 15% 15%;
+    --accent: 0 0% 85%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 40 30% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 25 60% 45%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 25%;
 
     --radius: 0.75rem;
 
     /* Custom gradient and shadows */
-    --gradient-hero: linear-gradient(135deg, hsl(40 30% 97%) 0%, hsl(35 40% 93%) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(25 60% 45%) 0%, hsl(35 70% 50%) 100%);
-    --shadow-elegant: 0 10px 40px -10px hsl(30 15% 25% / 0.15);
-    --shadow-soft: 0 4px 20px -4px hsl(30 15% 25% / 0.1);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 92%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(0 0% 30%) 0%, hsl(0 0% 40%) 100%);
+    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 15% / 0.15);
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 15% / 0.1);
   }
 }
 
