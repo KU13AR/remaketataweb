@@ -4,6 +4,14 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Import photos
+import horniPolice1 from "@/assets/gallery/horni-police-1.jpg";
+import horniPolice2 from "@/assets/gallery/horni-police-2.jpg";
+import horniPolice3 from "@/assets/gallery/horni-police-3.jpg";
+import horniPolice4 from "@/assets/gallery/horni-police-4.jpg";
+import horniPolice5 from "@/assets/gallery/horni-police-5.jpg";
+import horniPolice6 from "@/assets/gallery/horni-police-6.jpg";
+
 interface Photo {
   url: string;
   caption?: string;
@@ -22,12 +30,12 @@ const projects: Project[] = [
     year: "2021",
     description: "Komplexní restaurátorské práce na areálu poutního kostela včetně fasád a sochařských prvků",
     photos: [
-      { url: "https://jan-vich.estranky.cz/img/original/122.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/120.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/121.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/123.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/124.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/119.jpg" }
+      { url: horniPolice1 },
+      { url: horniPolice2 },
+      { url: horniPolice3 },
+      { url: horniPolice4 },
+      { url: horniPolice5 },
+      { url: horniPolice6 }
     ]
   },
   {
@@ -35,11 +43,8 @@ const projects: Project[] = [
     year: "2022",
     description: "Restaurování historického Mariánského sloupu v centru Plzně",
     photos: [
-      { url: "https://jan-vich.estranky.cz/img/original/113.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/114.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/115.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/116.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/117.jpg" }
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Mariánský+sloup+1" },
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Mariánský+sloup+2" }
     ]
   },
   {
@@ -47,13 +52,8 @@ const projects: Project[] = [
     year: "2016",
     description: "Kompletní rekonstrukce barokního sousoší včetně restaurování kamene a štuku",
     photos: [
-      { url: "https://jan-vich.estranky.cz/img/original/101.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/102.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/103.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/104.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/105.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/106.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/107.jpg" }
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Rokytník+1" },
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Rokytník+2" }
     ]
   },
   {
@@ -61,14 +61,8 @@ const projects: Project[] = [
     year: "2013-2015",
     description: "Rozsáhlé restaurátorské práce na hospitálním komplexu v Kuksu - dílo M. B. Brauna",
     photos: [
-      { url: "https://jan-vich.estranky.cz/img/original/83.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/84.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/85.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/86.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/87.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/88.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/89.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/90.jpg" }
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Kuks+1" },
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Kuks+2" }
     ]
   },
   {
@@ -76,12 +70,8 @@ const projects: Project[] = [
     year: "2010",
     description: "Restaurování významného barokního díla od Matyáše Bernarda Brauna",
     photos: [
-      { url: "https://jan-vich.estranky.cz/img/original/60.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/61.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/62.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/63.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/64.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/65.jpg" }
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Hořovice+1" },
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Hořovice+2" }
     ]
   },
   {
@@ -89,11 +79,8 @@ const projects: Project[] = [
     year: "2009",
     description: "Obnova historických fasád a architektonických prvků budovy městských lázní",
     photos: [
-      { url: "https://jan-vich.estranky.cz/img/original/44.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/45.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/46.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/47.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/48.jpg" }
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Liberec+1" },
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Liberec+2" }
     ]
   },
   {
@@ -101,10 +88,8 @@ const projects: Project[] = [
     year: "2008",
     description: "Restaurování sochařských prvků a kamenných balustrad ve francouzské zahradě",
     photos: [
-      { url: "https://jan-vich.estranky.cz/img/original/39.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/40.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/41.jpg" },
-      { url: "https://jan-vich.estranky.cz/img/original/42.jpg" }
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Dobříš+1" },
+      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Dobříš+2" }
     ]
   }
 ];
