@@ -135,7 +135,7 @@ const projects: Project[] = [
     ]
   },
   {
-    title: "Zámek Dobříš - Francouzská zahrada",
+    title: "Zámek Dobříš - Fontána napájení Héliových koní",
     year: "2008",
     description: "Restaurování sochařských prvků a kamenných balustrad ve francouzské zahradě",
     photos: [
