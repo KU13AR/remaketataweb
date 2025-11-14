@@ -301,53 +301,53 @@ export const Gallery = () => {
 
       {/* Fullscreen Gallery Dialog */}
       <Dialog open={!!selectedProject} onOpenChange={closeGallery}>
-        <DialogContent className="max-w-7xl h-[95vh] p-0">
+        <DialogContent className="max-w-7xl w-full h-[100dvh] md:h-[95vh] p-0 gap-0">
           {selectedProject && (
             <>
-              <DialogHeader className="px-6 pt-6 pb-4">
-                <DialogTitle className="text-2xl">
+              <DialogHeader className="px-3 md:px-6 pt-3 md:pt-6 pb-2 md:pb-4 flex-shrink-0">
+                <DialogTitle className="text-base md:text-2xl leading-tight">
                   {selectedProject.title}
-                  <span className="text-base font-normal text-muted-foreground ml-3">
+                  <span className="text-xs md:text-base font-normal text-muted-foreground ml-2 md:ml-3">
                     ({currentPhotoIndex + 1} / {selectedProject.photos.length})
                   </span>
                 </DialogTitle>
               </DialogHeader>
               
-              <div className="relative flex-1 flex items-center justify-center px-4 py-2 bg-muted/30">
+              <div className="relative flex-1 flex items-center justify-center px-2 md:px-4 py-2 bg-muted/30 min-h-0">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background shadow-lg h-12 w-12"
+                  className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background shadow-lg h-10 w-10 md:h-12 md:w-12"
                   onClick={prevPhoto}
                 >
-                  <ChevronLeft className="h-8 w-8" />
+                  <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
                 </Button>
 
                 <img
                   src={selectedProject.photos[currentPhotoIndex].url}
                   alt={`${selectedProject.title} ${currentPhotoIndex + 1}`}
-                  className="max-h-[calc(95vh-200px)] max-w-full object-contain"
+                  className="max-h-full max-w-full w-auto h-auto object-contain"
                   loading="lazy"
                 />
 
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background shadow-lg h-12 w-12"
+                  className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background shadow-lg h-10 w-10 md:h-12 md:w-12"
                   onClick={nextPhoto}
                 >
-                  <ChevronRight className="h-8 w-8" />
+                  <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
                 </Button>
               </div>
 
               {/* Thumbnail strip */}
-              <div className="px-4 pb-4 pt-2 border-t bg-background">
-                <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
+              <div className="px-2 md:px-4 pb-2 md:pb-4 pt-2 border-t bg-background flex-shrink-0">
+                <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
                   {selectedProject.photos.map((photo, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentPhotoIndex(index)}
-                      className={`flex-shrink-0 w-24 h-24 rounded-md overflow-hidden border-2 transition-all hover:scale-105 ${
+                      className={`flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-md overflow-hidden border-2 transition-all hover:scale-105 ${
                         index === currentPhotoIndex 
                           ? 'border-primary shadow-md' 
                           : 'border-border hover:border-primary/50'
