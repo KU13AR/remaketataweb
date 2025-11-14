@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, FileCheck, Briefcase } from "lucide-react";
+import { Mail, Phone, MapPin, FileCheck, Briefcase, Inbox } from "lucide-react";
 
 export const Contact = () => {
   return (
@@ -95,6 +95,18 @@ export const Contact = () => {
                       Vznik: 14. 4. 1993<br />
                       IČO: 48090395<br />
                       DIČ: CZ520503370
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary/30">
+                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Inbox className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Datová schránka</h3>
+                    <p className="text-muted-foreground text-sm">
+                      ID schránky: g4aivre
                     </p>
                   </div>
                 </div>
