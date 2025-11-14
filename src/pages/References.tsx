@@ -25,7 +25,7 @@ const references = [
       {
         title: "Mariánský sloup K. Videmanna, Plzeň",
         year: "2020–2021",
-        description: "Komplexní restaurování historického Mariánského sloupu z roku 1681 na náměstí Republiky včetně zlacení. Nominace na cenu NPÚ Patrimonium pro futuro (2022).",
+        description: "Komplexní restaurování historického Mariánského sloupu z roku 1681 na náměstí Republiky včetně zlacení. Nominace na cenu NPÚ Patrimonium pro futuro 2022.",
         highlight: false
       }
     ]
