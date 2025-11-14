@@ -210,9 +210,7 @@ const References = () => {
                   {section.projects.map((project, projectIndex) => (
                     <Card 
                       key={projectIndex} 
-                      className={`shadow-soft hover:shadow-elegant transition-all duration-300 ${
-                        project.highlight ? 'border-primary/50' : ''
-                      }`}
+                      className="shadow-soft hover:shadow-elegant transition-all duration-300"
                     >
                       <CardHeader>
                         <div className="flex items-start justify-between gap-4">
