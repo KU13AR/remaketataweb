@@ -13,7 +13,7 @@ const references = [
       {
         title: "NKP Hospital Kuks – Generální rekonstrukce",
         year: "2013–2015",
-        description: "Hlavní restaurátor kostela Nejsvětější Trojice a sochařských děl M.B. Brauna v areálu. Projekt oceněn titulem Stavba roku 2016 a Cenou Ministerstva kultury ČR.",
+        description: "Hlavní restaurátor kostela Nejsvětější Trojice a sochařských děl M.B. Brauna v areálu. Projekt oceněn titulem Stavba roku 2016 - Cena Ministerstva kultury ČR a Grand Prix / Europa Nostra - Cena Evropského kulturního dědictví 2017.",
         highlight: true
       },
       {
