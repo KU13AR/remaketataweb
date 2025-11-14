@@ -115,7 +115,7 @@ const references = [
       },
       {
         title: "Astronomická věž Klementina NKP",
-        year: "1990s",
+        year: "1993",
         description: "Rekonstrukce fasád včetně sochy Atlanta od M.B. Brauna."
       },
       {
