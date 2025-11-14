@@ -30,9 +30,6 @@ import kuks4 from "@/assets/gallery/kuks-4.jpg";
 import kuks5 from "@/assets/gallery/kuks-5.jpg";
 import kuks6 from "@/assets/gallery/kuks-6.jpg";
 import kuks7 from "@/assets/gallery/kuks-7.jpg";
-import kuks8 from "@/assets/gallery/kuks-8.jpg";
-import kuks9 from "@/assets/gallery/kuks-9.jpg";
-import kuks10 from "@/assets/gallery/kuks-10.jpg";
 
 interface Photo {
   url: string;
@@ -96,10 +93,7 @@ const projects: Project[] = [
       { url: kuks4 },
       { url: kuks5 },
       { url: kuks6 },
-      { url: kuks7 },
-      { url: kuks8 },
-      { url: kuks9 },
-      { url: kuks10 }
+      { url: kuks7 }
     ]
   },
   {
