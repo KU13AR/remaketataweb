@@ -19,13 +19,13 @@ const references = [
       {
         title: "Poutní areál kostela P. Marie, Horní Police",
         year: "2019–2021",
-        description: "Restaurování kamenných prvků a sochařských děl poutního areálu. Ocenění v soutěži Stavba roku 2021 – Cena Ministerstva kultury ČR. Nominace na cenu NPÚ Patrimonium pro futuro (2022).",
+        description: "Restaurování kamenných prvků a sochařských děl poutního areálu. Ocenění v soutěži Stavba roku 2021 – Cena Ministerstva kultury ČR.",
         highlight: true
       },
       {
         title: "Mariánský sloup K. Videmanna, Plzeň",
         year: "2020–2021",
-        description: "Komplexní restaurování historického Mariánského sloupu z roku 1681 na náměstí Republiky včetně zlacení.",
+        description: "Komplexní restaurování historického Mariánského sloupu z roku 1681 na náměstí Republiky včetně zlacení. Nominace na cenu NPÚ Patrimonium pro futuro (2022).",
         highlight: false
       }
     ]
