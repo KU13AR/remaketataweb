@@ -23,7 +23,6 @@ import rokytnik3 from "@/assets/gallery/rokytnik-3.jpg";
 import rokytnik4 from "@/assets/gallery/rokytnik-4.jpg";
 import rokytnik5 from "@/assets/gallery/rokytnik-5.jpg";
 import rokytnik6 from "@/assets/gallery/rokytnik-6.jpg";
-import rokytnik7 from "@/assets/gallery/rokytnik-7.jpg";
 import kuks1 from "@/assets/gallery/kuks-1.jpg";
 import kuks2 from "@/assets/gallery/kuks-2.jpg";
 import kuks3 from "@/assets/gallery/kuks-3.jpg";
@@ -83,8 +82,7 @@ const projects: Project[] = [
       { url: rokytnik3 },
       { url: rokytnik4 },
       { url: rokytnik5 },
-      { url: rokytnik6 },
-      { url: rokytnik7 }
+      { url: rokytnik6 }
     ]
   },
   {
