@@ -52,13 +52,6 @@ export const About = () => {
                 </p>
               </div>
 
-              <div className="border-l-4 border-primary pl-6">
-                <h3 className="text-2xl font-semibold mb-3">Restaurátorské zprávy</h3>
-                <p className="text-muted-foreground">
-                  Doplněné režimem památky, včetně fotografické dokumentace.
-                </p>
-              </div>
-
               <div className="border-l-4 border-accent pl-6 bg-accent/5 p-4 rounded-r-lg">
                 <p className="text-foreground font-medium">
                   ✓ Jsem pojištěn na rizika spojená s výkonem profese, do výše 5 mil. Kč.
