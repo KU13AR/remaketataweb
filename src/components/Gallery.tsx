@@ -52,6 +52,10 @@ import hradecKralove2 from "@/assets/gallery/hradec-kralove-2.jpg";
 import hradecKralove3 from "@/assets/gallery/hradec-kralove-3.jpg";
 import hradecKralove4 from "@/assets/gallery/hradec-kralove-4.jpg";
 import hradecKralove5 from "@/assets/gallery/hradec-kralove-5.jpg";
+import kutnaHora1 from "@/assets/gallery/kutna-hora-1.jpg";
+import kutnaHora2 from "@/assets/gallery/kutna-hora-2.jpg";
+import kutnaHora3 from "@/assets/gallery/kutna-hora-3.jpg";
+import kutnaHora4 from "@/assets/gallery/kutna-hora-4.jpg";
 
 interface Photo {
   url: string;
@@ -154,6 +158,17 @@ const projects: Project[] = [
       { url: dobris3 },
       { url: dobris5 },
       { url: dobris6 }
+    ]
+  },
+  {
+    title: "Sousoší sv.Isidora v Kutné Hoře",
+    year: "2005",
+    description: "Restaurování sousoší sv. Isidora, které je součást souboru třinácti barokních soch na terase před jezuitskou kolejíí",
+    photos: [
+      { url: kutnaHora1 },
+      { url: kutnaHora2 },
+      { url: kutnaHora3 },
+      { url: kutnaHora4 }
     ]
   },
   {
