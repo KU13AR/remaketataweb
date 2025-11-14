@@ -42,6 +42,12 @@ import liberec3 from "@/assets/gallery/liberec-3.jpg";
 import liberec4 from "@/assets/gallery/liberec-4.jpg";
 import liberec5 from "@/assets/gallery/liberec-5.jpg";
 import liberec6 from "@/assets/gallery/liberec-6.jpg";
+import dobris1 from "@/assets/gallery/dobris-1.jpg";
+import dobris2 from "@/assets/gallery/dobris-2.jpg";
+import dobris3 from "@/assets/gallery/dobris-3.jpg";
+import dobris4 from "@/assets/gallery/dobris-4.jpg";
+import dobris5 from "@/assets/gallery/dobris-5.jpg";
+import dobris6 from "@/assets/gallery/dobris-6.jpg";
 
 interface Photo {
   url: string;
@@ -139,8 +145,12 @@ const projects: Project[] = [
     year: "2008",
     description: "Restaurování sochařských prvků a kamenných balustrad ve francouzské zahradě",
     photos: [
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Dobříš+1" },
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Dobříš+2" }
+      { url: dobris1 },
+      { url: dobris2 },
+      { url: dobris3 },
+      { url: dobris4 },
+      { url: dobris5 },
+      { url: dobris6 }
     ]
   }
 ];
