@@ -36,6 +36,12 @@ import horovice3 from "@/assets/gallery/horovice-3.jpg";
 import horovice4 from "@/assets/gallery/horovice-4.jpg";
 import horovice5 from "@/assets/gallery/horovice-5.jpg";
 import horovice6 from "@/assets/gallery/horovice-6.jpg";
+import liberec1 from "@/assets/gallery/liberec-1.jpg";
+import liberec2 from "@/assets/gallery/liberec-2.jpg";
+import liberec3 from "@/assets/gallery/liberec-3.jpg";
+import liberec4 from "@/assets/gallery/liberec-4.jpg";
+import liberec5 from "@/assets/gallery/liberec-5.jpg";
+import liberec6 from "@/assets/gallery/liberec-6.jpg";
 
 interface Photo {
   url: string;
@@ -120,8 +126,12 @@ const projects: Project[] = [
     year: "2009",
     description: "Obnova historických fasád a architektonických prvků budovy městských lázní",
     photos: [
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Liberec+1" },
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Liberec+2" }
+      { url: liberec1 },
+      { url: liberec2 },
+      { url: liberec3 },
+      { url: liberec4 },
+      { url: liberec5 },
+      { url: liberec6 }
     ]
   },
   {
