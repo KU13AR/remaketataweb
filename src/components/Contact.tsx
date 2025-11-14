@@ -66,26 +66,6 @@ export const Contact = () => {
 
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary/30">
                   <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FileCheck className="w-5 h-5 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Povolení</h3>
-                    <p className="text-muted-foreground text-sm mb-2">
-                      MK ČR č. 6278/91 a 8.001/96
-                    </p>
-                    <a 
-                      href="https://rrkp.mkcr.cz/rejstrik/9dwBB4Q" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary text-sm hover:text-primary/80 transition-colors inline-flex items-center gap-1"
-                    >
-                      Rejstřík MK ČR →
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary/30">
-                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                     <Briefcase className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
@@ -108,6 +88,26 @@ export const Contact = () => {
                     <p className="text-muted-foreground text-sm">
                       ID schránky: g4aivre
                     </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary/30">
+                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FileCheck className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Povolení</h3>
+                    <p className="text-muted-foreground text-sm mb-2">
+                      MK ČR č. 6278/91 a 8.001/96
+                    </p>
+                    <a 
+                      href="https://rrkp.mkcr.cz/rejstrik/9dwBB4Q" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary text-sm hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+                    >
+                      Rejstřík MK ČR →
+                    </a>
                   </div>
                 </div>
               </div>
