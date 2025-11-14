@@ -1,20 +1,7 @@
-import reliefPattern from "@/assets/relief-pattern.jpg";
-
 export const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12 relative overflow-hidden">
-      {/* Decorative relief pattern */}
-      <div 
-        className="absolute top-0 left-0 right-0 h-32 opacity-15 bg-cover bg-center"
-        style={{ 
-          backgroundImage: `url(${reliefPattern})`,
-          maskImage: 'linear-gradient(to bottom, white, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, white, transparent)'
-        }}
-      />
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-accent opacity-40" />
-      
-      <div className="container px-4 relative">
+    <footer className="bg-foreground text-background py-12">
+      <div className="container px-4">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h3 className="text-2xl font-bold">Jan Vích</h3>
           <p className="text-background/80">

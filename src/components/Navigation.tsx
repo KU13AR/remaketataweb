@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
-import reliefPattern from "@/assets/relief-pattern.jpg";
 
 const navItems = [
   { label: "O mně", href: "#o-mne" },
@@ -11,22 +12,34 @@ const navItems = [
 ];
 
 export const Navigation = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleNavigation = (href: string, isPage?: boolean) => {
     if (isPage) {
       navigate(href);
+      setIsMobileMenuOpen(false);
     } else {
       // Pokud nejsme na hlavní stránce, navigujeme tam s hash
       if (location.pathname !== "/") {
         navigate("/" + href);
+        setIsMobileMenuOpen(false);
       } else {
         const element = document.querySelector(href);
         if (element) {
-          const offsetTop = element.getBoundingClientRect().top + window.scrollY - 120;
-          window.scrollTo({ top: offsetTop, behavior: "smooth" });
+          element.scrollIntoView({ behavior: "smooth" });
+          setIsMobileMenuOpen(false);
         }
       }
     }
@@ -38,28 +51,22 @@ export const Navigation = () => {
       setTimeout(() => {
         const element = document.querySelector(location.hash);
         if (element) {
-          const offsetTop = element.getBoundingClientRect().top + window.scrollY - 120;
-          window.scrollTo({ top: offsetTop, behavior: "smooth" });
+          element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
     }
   }, [location]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-soft relative overflow-hidden">
-      {/* Decorative relief pattern */}
-      <div 
-        className="absolute bottom-0 left-0 right-0 h-32 opacity-15 bg-cover bg-center"
-        style={{ 
-          backgroundImage: `url(${reliefPattern})`,
-          maskImage: 'linear-gradient(to top, white, transparent)',
-          WebkitMaskImage: 'linear-gradient(to top, white, transparent)'
-        }}
-      />
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-accent opacity-30" />
-      
-      <div className="container px-4 py-3">
-        <div className="flex flex-col items-center gap-3">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-background/95 backdrop-blur-md shadow-soft" 
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container px-4 py-4">
+        <div className="flex items-center justify-between">
           <button 
             onClick={() => navigate("/")}
             className="text-2xl font-bold tracking-tight hover:text-primary transition-colors"
@@ -67,19 +74,44 @@ export const Navigation = () => {
             Jan Vích
           </button>
 
-          {/* Navigation - horizontal layout under name */}
-          <div className="flex items-center gap-3 sm:gap-6 md:gap-8 overflow-x-auto w-full justify-center">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href, item.isPage)}
-                className="text-foreground hover:text-primary transition-colors font-bold whitespace-nowrap text-base sm:text-lg"
+                className="text-foreground hover:text-primary transition-colors font-medium"
               >
                 {item.label}
               </button>
             ))}
           </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </Button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-4 border-t pt-4">
+            {navItems.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => handleNavigation(item.href, item.isPage)}
+                className="block w-full text-left text-foreground hover:text-primary transition-colors font-medium py-2"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </nav>
   );
