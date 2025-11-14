@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileSearch, Hammer, Users, ClipboardCheck, FileText, Shield } from "lucide-react";
+import { FileSearch, Hammer, Users, ClipboardCheck, FileText, Shield, FolderOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -16,6 +17,12 @@ const services = [
     icon: Users,
     title: "Garantovaný tým",
     description: "Stálý tým profesionálních restaurátorů a specializovaných řemeslníků."
+  },
+  {
+    icon: FolderOpen,
+    title: "Referenční zakázky",
+    description: "Přehled realizovaných projektů a oceněných zakázek včetně památek UNESCO a národních kulturních památek.",
+    link: "/reference"
   },
   {
     icon: ClipboardCheck,
@@ -48,8 +55,8 @@ export const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
-            return (
-              <Card key={index} className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+            const card = (
+              <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 h-full">
                 <CardHeader>
                   <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-primary-foreground" />
@@ -60,6 +67,16 @@ export const Services = () => {
                   <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardContent>
               </Card>
+            );
+            
+            return service.link ? (
+              <Link key={index} to={service.link}>
+                {card}
+              </Link>
+            ) : (
+              <div key={index}>
+                {card}
+              </div>
             );
           })}
         </div>
