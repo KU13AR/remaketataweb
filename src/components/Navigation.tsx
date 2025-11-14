@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
-import heroRelief from "@/assets/hero-relief.jpg";
 
 const navItems = [
   { label: "O mně", href: "#o-mne" },
@@ -60,15 +59,13 @@ export const Navigation = () => {
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-hero relative overflow-hidden"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-background/95 backdrop-blur-md shadow-soft" 
+          : "bg-transparent"
+      }`}
     >
-      <div className="absolute inset-0 opacity-10">
-        <div 
-          className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroRelief})` }}
-        />
-      </div>
-      <div className="container px-4 py-4 relative z-10">
+      <div className="container px-4 py-4">
         <div className="flex items-center justify-between">
           <button 
             onClick={() => navigate("/")}
