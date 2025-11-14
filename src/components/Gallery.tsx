@@ -47,6 +47,11 @@ import dobris2 from "@/assets/gallery/dobris-2.jpg";
 import dobris3 from "@/assets/gallery/dobris-3.jpg";
 import dobris5 from "@/assets/gallery/dobris-5.jpg";
 import dobris6 from "@/assets/gallery/dobris-6.jpg";
+import hradecKralove1 from "@/assets/gallery/hradec-kralove-1.jpg";
+import hradecKralove2 from "@/assets/gallery/hradec-kralove-2.jpg";
+import hradecKralove3 from "@/assets/gallery/hradec-kralove-3.jpg";
+import hradecKralove4 from "@/assets/gallery/hradec-kralove-4.jpg";
+import hradecKralove5 from "@/assets/gallery/hradec-kralove-5.jpg";
 
 interface Photo {
   url: string;
@@ -149,6 +154,18 @@ const projects: Project[] = [
       { url: dobris3 },
       { url: dobris5 },
       { url: dobris6 }
+    ]
+  },
+  {
+    title: "Mariánský sloup G.B. Bully, Hradec Králové",
+    year: "2004",
+    description: "Restaurování Mariánského sloupu na Velkém náměstí",
+    photos: [
+      { url: hradecKralove1 },
+      { url: hradecKralove2 },
+      { url: hradecKralove3 },
+      { url: hradecKralove4 },
+      { url: hradecKralove5 }
     ]
   }
 ];
