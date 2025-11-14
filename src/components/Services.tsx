@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileSearch, Hammer, Users, ClipboardCheck, FileText, Shield, FolderOpen } from "lucide-react";
+import { FileSearch, Hammer, Users, ClipboardCheck, FileText, Shield, FolderOpen, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -17,12 +17,6 @@ const services = [
     icon: Users,
     title: "Garantovaný tým",
     description: "Stálý tým profesionálních restaurátorů a specializovaných řemeslníků."
-  },
-  {
-    icon: FolderOpen,
-    title: "Referenční zakázky",
-    description: "Přehled realizovaných projektů a oceněných zakázek včetně památek UNESCO a národních kulturních památek.",
-    link: "/reference"
   },
   {
     icon: ClipboardCheck,
@@ -52,33 +46,47 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            const card = (
-              <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 h-full">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-primary-foreground" />
+        <div className="max-w-6xl mx-auto space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Card key={index} className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 h-full">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base">{service.description}</CardDescription>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+
+          {/* Referenční zakázky - široká klikatelná dlaždice */}
+          <Link to="/reference" className="block group">
+            <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                      <FolderOpen className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-1">Referenční zakázky</h3>
+                      <p className="text-muted-foreground text-sm">
+                        Přehled realizovaných projektů a oceněných zakázek včetně památek UNESCO a národních kulturních památek
+                      </p>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
-                </CardContent>
-              </Card>
-            );
-            
-            return service.link ? (
-              <Link key={index} to={service.link}>
-                {card}
-              </Link>
-            ) : (
-              <div key={index}>
-                {card}
-              </div>
-            );
-          })}
+                  <ChevronRight className="w-6 h-6 text-primary group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
       </div>
     </section>
