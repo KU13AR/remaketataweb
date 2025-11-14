@@ -238,7 +238,7 @@ const References = () => {
               <h2 className="text-3xl font-bold text-primary border-b pb-3">
                 Profesní aktivity
               </h2>
-              <Card className="shadow-soft">
+              <Card className="shadow-soft hover:shadow-elegant transition-all duration-300">
                 <CardContent className="pt-6">
                   <ul className="space-y-3">
                     {professionalActivities.map((activity, index) => (
@@ -257,7 +257,7 @@ const References = () => {
               <h2 className="text-3xl font-bold text-primary border-b pb-3">
                 Spolupracující restaurátoři
               </h2>
-              <Card className="shadow-soft">
+              <Card className="shadow-soft hover:shadow-elegant transition-all duration-300">
                 <CardContent className="pt-6">
                   <p className="text-muted-foreground leading-relaxed">
                     {collaborators}
