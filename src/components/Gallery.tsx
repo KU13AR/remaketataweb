@@ -30,6 +30,12 @@ import kuks4 from "@/assets/gallery/kuks-4.jpg";
 import kuks5 from "@/assets/gallery/kuks-5.jpg";
 import kuks6 from "@/assets/gallery/kuks-6.jpg";
 import kuks7 from "@/assets/gallery/kuks-7.jpg";
+import horovice1 from "@/assets/gallery/horovice-1.jpg";
+import horovice2 from "@/assets/gallery/horovice-2.jpg";
+import horovice3 from "@/assets/gallery/horovice-3.jpg";
+import horovice4 from "@/assets/gallery/horovice-4.jpg";
+import horovice5 from "@/assets/gallery/horovice-5.jpg";
+import horovice6 from "@/assets/gallery/horovice-6.jpg";
 
 interface Photo {
   url: string;
@@ -101,8 +107,12 @@ const projects: Project[] = [
     year: "2010",
     description: "Restaurování významného barokního díla od Matyáše Bernarda Brauna",
     photos: [
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Hořovice+1" },
-      { url: "https://via.placeholder.com/800x600/e5e5e5/666666?text=Hořovice+2" }
+      { url: horovice1 },
+      { url: horovice2 },
+      { url: horovice3 },
+      { url: horovice4 },
+      { url: horovice5 },
+      { url: horovice6 }
     ]
   },
   {
