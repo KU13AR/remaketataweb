@@ -5,7 +5,7 @@ const services = [
   {
     icon: FileSearch,
     title: "Průzkumy a posudky",
-    description: "Restaurátorské průzkumy, odborné posudky a projekty, včetně laboratorních analýz."
+    description: "Restaurátorské průzkumy, odborné posudky a projekty, včetně laboratorních analýz. Podklady pro vyhlášení VZ, žádost o dotaci EU, MK ČR."
   },
   {
     icon: Hammer,
