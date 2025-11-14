@@ -11,7 +11,7 @@ const services = [
   {
     icon: Hammer,
     title: "Restaurátorské práce",
-    description: "Kompletní restaurování sochařských děl v kameni a štuku, kamenné architektury a fasád. Doplněné režimem památky, včetně fotografické dokumentace."
+    description: "Kompletní restaurování sochařských děl v kameni a štuku, kamenné architektury a fasád."
   },
   {
     icon: Users,
