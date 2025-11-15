@@ -108,7 +108,7 @@ const projects: Project[] = [
     ]
   },
   {
-    title: "Kuks Hospital",
+    title: "Hospital v Kuksu",
     year: "2013-2015",
     description: "Rozsáhlé restaurátorské práce na hospitálním komplexu v Kuksu - dílo M. B. Brauna",
     photos: [
