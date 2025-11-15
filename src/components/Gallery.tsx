@@ -110,7 +110,7 @@ const projects: Project[] = [
   {
     title: "Hospital v Kuksu",
     year: "2013-2015",
-    description: "Rozsáhlé restaurátorské práce na hospitálním komplexu v Kuksu - dílo M. B. Brauna",
+    description: "Rozsáhlé restaurátorské práce na hospitálním komplexu v Kuksu - postavil Giovanni Battista Alliprandi, autor sochařské výzdoby M.B. Braun",
     photos: [
       { url: kuks1 },
       { url: kuks2 },
