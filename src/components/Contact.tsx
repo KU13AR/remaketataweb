@@ -96,7 +96,7 @@ export const Contact = () => {
                     <FileCheck className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Povolení</h3>
+                    <h3 className="font-semibold mb-1">Povolení - licence</h3>
                     <p className="text-muted-foreground text-sm mb-2">
                       MK ČR č. 6278/91 a 8.001/96
                     </p>
