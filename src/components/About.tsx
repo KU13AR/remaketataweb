@@ -7,11 +7,24 @@ export const About = () => {
             O mně
           </h2>
           
+          <div className="flex flex-col lg:flex-row gap-8 mb-12">
+            <div className="lg:w-1/2 space-y-4">
+              <p className="text-lg leading-relaxed text-left text-foreground">
+                Narodil jsem se v roce <strong>1952</strong> v <strong>Hradci Králové</strong>, po ukončení středoškolského obecného vzdělání v Brně jsem absolvoval v letech <strong>1970–1974</strong> studia na <strong>Střední odborné škole kamenosochařské v Hořicích v Podkrkonoší</strong>. 
+              </p>
+              <p className="text-lg leading-relaxed text-left text-foreground">
+                V letech <strong>1974–1980</strong> jsem studoval na <strong>Akademii výtvarných umění v Praze</strong> v oboru sochařství se zaměřením na restaurování sochařských děl v kameni. 
+              </p>
+              <p className="text-lg leading-relaxed text-left text-foreground">
+                Od roku <strong>1981</strong> vykonávám samostatnou činnost v oboru.
+              </p>
+            </div>
+            <div className="lg:w-1/2">
+              {/* Prostor pro fotografii */}
+            </div>
+          </div>
+
           <div className="prose prose-lg max-w-none space-y-6 text-foreground">
-            <p className="text-base leading-relaxed text-left">
-              Narodil jsem se v roce 1952 v Hradci Králové, po ukončení středoškolského obecného vzdělání v Brně jsem absolvoval v letech 1970–1974 studia na Střední odborné škole kamenosochařské v Hořicích v Podkrkonoší. V letech 1974–1980 jsem studoval na Akademii výtvarných umění v Praze v oboru sochařství se zaměřením na restaurování sochařských děl v kameni. Od roku 1981 vykonávám samostatnou činnost v oboru.
-            </p>
-            
             <p className="text-lg leading-relaxed">
               Dodávám a zajišťuji tyto práce:
             </p>
