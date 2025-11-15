@@ -9,7 +9,7 @@ export const About = () => {
           
           <div className="prose prose-lg max-w-none space-y-6 text-foreground">
             <p className="text-base leading-relaxed text-left">
-              Narozen v roce 1952 v Hradci Králové, po ukončení středoškolského obecného vzdělání v Brně jsem absolvoval v letech 1970–1974 studia na Střední odborné škole kamenosochařské v Hořicích v Podkrkonoší. V letech 1974–1980 jsem studoval na Akademii výtvarných umění v Praze v oboru sochařství se zaměřením na restaurování sochařských děl v kameni. Od roku 1981 vykonávám samostatnou činnost v oboru.
+              Narodil jsem se v roce 1952 v Hradci Králové, po ukončení středoškolského obecného vzdělání v Brně jsem absolvoval v letech 1970–1974 studia na Střední odborné škole kamenosochařské v Hořicích v Podkrkonoší. V letech 1974–1980 jsem studoval na Akademii výtvarných umění v Praze v oboru sochařství se zaměřením na restaurování sochařských děl v kameni. Od roku 1981 vykonávám samostatnou činnost v oboru.
             </p>
             
             <p className="text-lg leading-relaxed">
