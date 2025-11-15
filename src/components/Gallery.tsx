@@ -173,7 +173,7 @@ const projects: Project[] = [
   {
     title: "Mariánský sloup G.B. Bully, Hradec Králové",
     year: "2004",
-    description: "Restaurování Mariánského sloupu na Velkém náměstí",
+    description: "Restaurování Mariánského sloupu na Velkém náměstí v Hradci Králové od G.B. Bully",
     photos: [
       { url: hradecKralove1 },
       { url: hradecKralove2 },
