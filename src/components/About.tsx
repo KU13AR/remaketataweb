@@ -1,3 +1,5 @@
+import portraitBw from "@/assets/portrait-bw.jpg";
+
 export const About = () => {
   return (
     <section id="o-mne" className="py-20 bg-card">
@@ -20,7 +22,14 @@ export const About = () => {
               </p>
             </div>
             <div className="lg:w-1/2">
-              {/* Prostor pro fotografii */}
+              <div className="relative rounded-lg overflow-hidden shadow-elegant">
+                <img 
+                  src={portraitBw} 
+                  alt="Jan Vích - Akademický sochař a restaurátor"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
+              </div>
             </div>
           </div>
 
