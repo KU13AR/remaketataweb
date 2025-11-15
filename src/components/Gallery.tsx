@@ -85,7 +85,7 @@ const projects: Project[] = [
   {
     title: "Mariánský sloup v Plzni",
     year: "2022",
-    description: "Restaurování historického Mariánského sloupu v centru Plzně",
+    description: "Restaurování historického Mariánského sloupu v centru Plzně na Náměstí republiky",
     photos: [
       { url: marianskesloup1 },
       { url: marianskesloup2 },
