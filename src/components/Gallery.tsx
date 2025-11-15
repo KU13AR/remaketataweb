@@ -280,10 +280,7 @@ export const Gallery = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12 space-y-4">
-          <p className="text-muted-foreground">
-            Klikněte na fotografii pro zobrazení detailu
-          </p>
+        <div className="text-center mt-12">
           <div className="flex flex-wrap gap-4 justify-center text-sm">
             <span className="text-primary">• Historické památky UNESCO</span>
             <span className="text-primary">• Kamenná architektura</span>
