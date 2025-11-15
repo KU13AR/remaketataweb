@@ -12,7 +12,7 @@ export const Footer = () => {
           
           <div className="space-y-2 text-sm text-background/70">
             <p>
-              Povolení MK ČR č. 6278/91 a 8.001/96
+              Povolení - licence MK ČR č. 6278/91 a 8.001/96
             </p>
             <p>
               Práce dle Zákona o památkové péči č. 20/1987 Sb.
