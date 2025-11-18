@@ -21,7 +21,7 @@ export const About = () => {
                 Od roku 1981 vykonávám samostatnou činnost v oboru.
               </p>
               <p className="text-lg leading-relaxed text-left text-foreground">
-                Restaurátorské práce provádím na základě povolení MK ČR, č. 6278/91 a 8.001/96. Práce na kulturních památkách jsou prováděny dle Zákona o památkové péči č. 20/1987 Sb. a jeho následných novel v aktuálním znění.
+                Restaurátorské práce provádím na základě povolení MK ČR, č. 6278/91 a 8.001/96. Práce na kulturních památkách jsou prováděny dle Zákona o památkové péči č. 20/1987 Sb., ve znění posledních předpisů.
               </p>
             </div>
             <div className="lg:w-1/2">
