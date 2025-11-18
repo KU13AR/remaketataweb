@@ -110,10 +110,10 @@ export const Navigation = () => {
           <Button
             ref={buttonRef}
             variant="ghost"
-            className="md:hidden h-11 w-11 p-0 [&_svg]:!w-[36px] [&_svg]:!h-[36px]"
+            className="md:hidden h-10 w-10 p-0 [&_svg]:!w-[32px] [&_svg]:!h-[32px]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={36} strokeWidth={2.5} /> : <Menu size={36} strokeWidth={2.5} />}
+            {isMobileMenuOpen ? <X size={32} strokeWidth={2.5} /> : <Menu size={32} strokeWidth={2.5} />}
           </Button>
         </div>
 
