@@ -85,10 +85,8 @@ export const About = () => {
               </div>
             </div>
 
-            <p className="text-sm text-muted-foreground italic mt-8 pt-6 border-t">
-              Výše uvedené práce provádím na základě povolení MK ČR, č. 6278/91 a 8.001/96. 
-              Práce na kulturních památkách jsou prováděny dle Zákona o památkové péči č. 20/1987 Sb. 
-              a jeho následných novel v aktuálním znění.
+            <p className="text-lg leading-relaxed mt-8 pt-6 border-t">
+              Restaurátorské práce provádím na základě povolení MK ČR, č. 6278/91 a 8.001/96. Práce na kulturních památkách jsou prováděny dle Zákona o památkové péči č. 20/1987 Sb. a jeho následných novel v aktuálním znění.
             </p>
           </div>
         </div>
