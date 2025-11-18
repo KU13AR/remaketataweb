@@ -279,15 +279,6 @@ export const Gallery = () => {
             </Card>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <div className="flex flex-wrap gap-4 justify-center text-sm">
-            <span className="text-primary">• Historické památky UNESCO</span>
-            <span className="text-primary">• Kamenná architektura</span>
-            <span className="text-primary">• Barokní sochy</span>
-            <span className="text-primary">• Fasády</span>
-          </div>
-        </div>
       </div>
 
       {/* Fullscreen Gallery Dialog */}
