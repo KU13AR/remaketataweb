@@ -234,7 +234,7 @@ const References = () => {
                         </p>
                         {project.galleryId && (
                           <Link 
-                            to={`/#galerie?open=${project.galleryId}`}
+                            to={`/#galerie?open=${project.galleryId}&from=reference`}
                             className="inline-flex items-center gap-2 mt-4 text-primary hover:text-primary/80 transition-colors font-medium"
                           >
                             <Image className="w-4 h-4" />

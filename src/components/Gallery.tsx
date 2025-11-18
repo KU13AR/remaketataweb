@@ -208,6 +208,16 @@ export const Gallery = () => {
   const closeGallery = () => {
     setSelectedProject(null);
     setCurrentPhotoIndex(0);
+    
+    // Check if we came from references page
+    const hashParts = location.hash.split('?');
+    if (hashParts.length > 1) {
+      const params = new URLSearchParams(hashParts[1]);
+      if (params.get('from') === 'reference') {
+        // Navigate back to references
+        window.history.back();
+      }
+    }
   };
 
   // Automatically open project from URL parameter
