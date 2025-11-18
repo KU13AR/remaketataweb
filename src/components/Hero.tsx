@@ -33,7 +33,7 @@ export const Hero = () => {
               Akademický sochař a restaurátor
             </p>
             <div className="h-1 w-24 bg-gradient-accent mx-auto md:mx-0 rounded-full" />
-            <p className="text-lg text-muted-foreground max-w-xl">
+            <p className="text-xl text-muted-foreground max-w-xl">
               Specializace na restaurování historických památek, sochařských děl v kameni a štuku, kamenné architektury a fasád
             </p>
           </div>
