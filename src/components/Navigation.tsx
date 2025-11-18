@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -16,6 +16,8 @@ export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +27,23 @@ export const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isMobileMenuOpen &&
+        menuRef.current &&
+        buttonRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMobileMenuOpen]);
 
   const handleNavigation = (href: string, isPage?: boolean) => {
     if (isPage) {
@@ -89,6 +108,7 @@ export const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <Button
+            ref={buttonRef}
             variant="ghost"
             size="icon"
             className="md:hidden"
@@ -100,7 +120,7 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute right-4 top-16 bg-background/95 backdrop-blur-md shadow-soft rounded-lg p-4 space-y-2 min-w-[200px] z-50">
+          <div ref={menuRef} className="md:hidden absolute right-4 top-16 bg-background/95 backdrop-blur-md shadow-soft rounded-lg p-4 space-y-2 min-w-[200px] z-50">
             {navItems.map((item) => (
               <button
                 key={item.href}
