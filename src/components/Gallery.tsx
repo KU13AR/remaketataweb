@@ -212,18 +212,22 @@ export const Gallery = () => {
 
   // Automatically open project from URL parameter
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const openProjectId = params.get('open');
-    
-    if (openProjectId) {
-      const project = projects.find(p => p.id === openProjectId);
-      if (project) {
-        openGallery(project, 0);
-        // Remove the parameter from URL after opening
-        window.history.replaceState({}, '', location.pathname + location.hash.split('?')[0]);
+    // Parse parameters from hash (after #galerie)
+    const hashParts = location.hash.split('?');
+    if (hashParts.length > 1) {
+      const params = new URLSearchParams(hashParts[1]);
+      const openProjectId = params.get('open');
+      
+      if (openProjectId) {
+        const project = projects.find(p => p.id === openProjectId);
+        if (project) {
+          openGallery(project, 0);
+          // Remove the parameter from URL after opening
+          window.history.replaceState({}, '', location.pathname + hashParts[0]);
+        }
       }
     }
-  }, [location.search]);
+  }, [location.hash]);
 
   const nextPhoto = () => {
     if (selectedProject) {
