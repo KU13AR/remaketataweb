@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Image } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
@@ -14,19 +14,22 @@ const references = [
         title: "NKP Hospital Kuks – Generální rekonstrukce",
         year: "2013–2015",
         description: "Hlavní restaurátor kostela Nejsvětější Trojice a sochařských děl M.B. Brauna v areálu. Projekt oceněn titulem Stavba roku 2016 - Cena Ministerstva kultury ČR a Grand Prix / Europa Nostra - Cena Evropského kulturního dědictví 2017.",
-        highlight: true
+        highlight: true,
+        galleryId: "hospital-kuks"
       },
       {
         title: "Poutní areál kostela P. Marie, Horní Police",
         year: "2019–2021",
         description: "Restaurování kamenných prvků a sochařských děl poutního areálu. Ocenění v soutěži Stavba roku 2021 – Cena Ministerstva kultury ČR.",
-        highlight: true
+        highlight: true,
+        galleryId: "horni-police"
       },
       {
         title: "Mariánský sloup K. Videmanna, Plzeň",
         year: "2020–2021",
         description: "Komplexní restaurování historického Mariánského sloupu z roku 1681 na náměstí Republiky včetně zlacení. Nominace na cenu NPÚ Patrimonium pro futuro 2022.",
-        highlight: false
+        highlight: false,
+        galleryId: "marianske-sloup-plzen"
       }
     ]
   },
@@ -36,7 +39,8 @@ const references = [
       {
         title: "Sousoší Korunovace P. Marie, Starý Rokytník",
         year: "2016",
-        description: "Kompletní rekonstrukce barokního sousoší zahrnující restaurování kamene a štuku s doplněním chybějících částí."
+        description: "Kompletní rekonstrukce barokního sousoší zahrnující restaurování kamene a štuku s doplněním chybějících částí.",
+        galleryId: "rokytnik"
       },
       {
         title: "Chrám sv. Barbory, Kutná Hora",
@@ -46,7 +50,8 @@ const references = [
       {
         title: "Sluneční brána M.B. Brauna, zámek Hořovice",
         year: "2010",
-        description: "Restaurování významného barokního díla s podrobným průzkumem a konservací kamenných prvků."
+        description: "Restaurování významného barokního díla s podrobným průzkumem a konservací kamenných prvků.",
+        galleryId: "horovice"
       },
       {
         title: "Liebiegova vila (A. Burger, 1902), Liberec",
@@ -61,12 +66,14 @@ const references = [
       {
         title: "Fontána Napájení Héliových koní I.F. Platzera, zámek Dobříš",
         year: "2006–2008",
-        description: "Víceetapové restaurování barokní fontány."
+        description: "Víceetapové restaurování barokní fontány.",
+        galleryId: "dobris"
       },
       {
         title: "Městské lázně (A. Burger, 1902), Liberec",
         year: "2006–2009",
-        description: "Víceetapová rekonstrukce historického lázeňského objektu."
+        description: "Víceetapová rekonstrukce historického lázeňského objektu.",
+        galleryId: "liberec"
       },
       {
         title: "Čtyři roční období M.B. Brauna, Teplice",
@@ -76,7 +83,8 @@ const references = [
       {
         title: "Mariánský sloup G.B. Bully, Hradec Králové",
         year: "2004",
-        description: "Restaurování Mariánského sloupu na Velkém náměstí."
+        description: "Restaurování Mariánského sloupu na Velkém náměstí.",
+        galleryId: "hradec-kralove"
       },
       {
         title: "Transfér šesti soch I.F. Platzera, zámek Dobříš",
@@ -224,6 +232,23 @@ const References = () => {
                         <p className="text-muted-foreground leading-relaxed">
                           {project.description}
                         </p>
+                        {project.galleryId && (
+                          <Link 
+                            to={`/#galerie`}
+                            onClick={() => {
+                              setTimeout(() => {
+                                const element = document.getElementById(project.galleryId);
+                                if (element) {
+                                  element.scrollIntoView({ behavior: "smooth", block: "center" });
+                                }
+                              }, 100);
+                            }}
+                            className="inline-flex items-center gap-2 mt-4 text-primary hover:text-primary/80 transition-colors font-medium"
+                          >
+                            <Image className="w-4 h-4" />
+                            Galerie →
+                          </Link>
+                        )}
                       </CardContent>
                     </Card>
                   ))}

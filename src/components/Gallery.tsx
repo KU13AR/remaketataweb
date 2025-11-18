@@ -62,6 +62,7 @@ interface Photo {
 }
 
 interface Project {
+  id?: string;
   title: string;
   year: string;
   description: string;
@@ -70,6 +71,7 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: "horni-police",
     title: "Areál Poutního kostela P. Marie Horní Police",
     year: "2021",
     description: "Komplexní restaurátorské práce na areálu poutního kostela včetně fasád a sochařských prvků",
@@ -83,6 +85,7 @@ const projects: Project[] = [
     ]
   },
   {
+    id: "marianske-sloup-plzen",
     title: "Mariánský sloup v Plzni",
     year: "2022",
     description: "Restaurování historického Mariánského sloupu v centru Plzně na Náměstí Republiky",
@@ -95,6 +98,7 @@ const projects: Project[] = [
     ]
   },
   {
+    id: "rokytnik",
     title: "Rekonstrukce sousoší Korunovace Panny Marie v Rokytníku u Trutnova",
     year: "2016",
     description: "Kompletní rekonstrukce barokního sousoší včetně restaurování kamene a štuku",
@@ -108,6 +112,7 @@ const projects: Project[] = [
     ]
   },
   {
+    id: "hospital-kuks",
     title: "Hospital v Kuksu",
     year: "2013-2015",
     description: "Rozsáhlé restaurátorské práce na hospitálním komplexu v Kuksu - postavil Giovanni Battista Alliprandi, autor sochařské výzdoby M.B. Braun",
@@ -122,6 +127,7 @@ const projects: Project[] = [
     ]
   },
   {
+    id: "horovice",
     title: "Sluneční brána od M.B. Brauna na Zámku v Hořovicích",
     year: "2010",
     description: "Restaurování významného barokního díla od Matyáše Bernarda Brauna",
@@ -135,6 +141,7 @@ const projects: Project[] = [
     ]
   },
   {
+    id: "liberec",
     title: "Rekonstrukce Městských lázní v Liberci",
     year: "2009",
     description: "Obnova historických fasád a architektonických prvků budovy městských lázní",
@@ -148,6 +155,7 @@ const projects: Project[] = [
     ]
   },
   {
+    id: "dobris",
     title: "Zámek Dobříš - Fontána napájení Héliových koní",
     year: "2008",
     description: "Restaurování sochařských prvků a kamenných balustrad ve francouzské zahradě",
@@ -160,6 +168,7 @@ const projects: Project[] = [
     ]
   },
   {
+    id: "kutna-hora",
     title: "Sousoší sv.Isidora v Kutné Hoře",
     year: "2005",
     description: "Restaurování sousoší sv. Isidora, které je součást souboru třinácti barokních soch na terase před jezuitskou kolejíí",
@@ -171,6 +180,7 @@ const projects: Project[] = [
     ]
   },
   {
+    id: "hradec-kralove",
     title: "Mariánský sloup G.B. Bully, Hradec Králové",
     year: "2004",
     description: "Restaurování Mariánského sloupu na Velkém náměstí v Hradci Králové od G.B. Bully",
@@ -226,7 +236,7 @@ export const Gallery = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {projects.map((project, projectIndex) => (
-            <Card key={projectIndex} className="overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-300">
+            <Card key={projectIndex} id={project.id} className="overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-300 scroll-mt-24">
               <div className="aspect-[4/3] overflow-hidden bg-muted cursor-pointer" onClick={() => openGallery(project, 0)}>
                 <img 
                   src={project.photos[0].url} 
