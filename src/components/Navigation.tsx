@@ -100,12 +100,12 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4 border-t pt-4">
+          <div className="md:hidden absolute right-4 top-16 bg-background/95 backdrop-blur-md shadow-soft rounded-lg p-4 space-y-2 min-w-[200px] z-50">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href, item.isPage)}
-                className="block w-full text-left text-foreground hover:text-primary transition-colors font-medium py-2"
+                className="block w-full text-left text-foreground hover:text-primary transition-colors font-medium py-2 px-3 rounded hover:bg-muted/50"
               >
                 {item.label}
               </button>
