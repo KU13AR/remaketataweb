@@ -99,7 +99,7 @@ export const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href, item.isPage)}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-lg text-foreground hover:text-primary transition-colors font-medium"
               >
                 {item.label}
               </button>
@@ -124,7 +124,7 @@ export const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href, item.isPage)}
-                className="block w-full text-left text-foreground hover:text-primary transition-colors font-medium py-2 px-3 rounded hover:bg-muted/50"
+                className="block w-full text-left text-lg text-foreground hover:text-primary transition-colors font-medium py-2 px-3 rounded hover:bg-muted/50"
               >
                 {item.label}
               </button>
