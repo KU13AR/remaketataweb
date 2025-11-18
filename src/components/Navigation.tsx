@@ -110,8 +110,7 @@ export const Navigation = () => {
           <Button
             ref={buttonRef}
             variant="ghost"
-            size="icon"
-            className="md:hidden"
+            className="md:hidden h-12 w-12 p-0"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={42} strokeWidth={2.5} /> : <Menu size={42} strokeWidth={2.5} />}
