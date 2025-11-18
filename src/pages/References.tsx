@@ -76,6 +76,12 @@ const references = [
         galleryId: "liberec"
       },
       {
+        title: "Sousoší sv. Isidora před Jezuitskou kolejí v Kutné Hoře",
+        year: "2005",
+        description: "Restaurování sousoší sv. Isidora, které je součást souboru třinácti barokních soch na terase před jezuitskou kolejí.",
+        galleryId: "kutna-hora"
+      },
+      {
         title: "Čtyři roční období M.B. Brauna, Teplice",
         year: "2005",
         description: "Restaurování sochařských děl M.B. Brauna v Zahradním a plesovém domě."
