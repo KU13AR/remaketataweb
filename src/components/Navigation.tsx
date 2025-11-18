@@ -90,7 +90,7 @@ export const Navigation = () => {
             onClick={() => navigate("/")}
             className="text-2xl font-bold tracking-tight hover:text-primary transition-colors"
           >
-            Jan Vích
+            ak. soch. Jan Vích
           </button>
 
           {/* Desktop Navigation */}
