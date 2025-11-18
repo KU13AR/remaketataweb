@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "react-router-dom";
 
 // Import photos
 import horniPolice1 from "@/assets/gallery/horni-police-1.jpg";
@@ -197,6 +198,7 @@ const projects: Project[] = [
 export const Gallery = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const location = useLocation();
 
   const openGallery = (project: Project, photoIndex: number = 0) => {
     setSelectedProject(project);
@@ -207,6 +209,21 @@ export const Gallery = () => {
     setSelectedProject(null);
     setCurrentPhotoIndex(0);
   };
+
+  // Automatically open project from URL parameter
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const openProjectId = params.get('open');
+    
+    if (openProjectId) {
+      const project = projects.find(p => p.id === openProjectId);
+      if (project) {
+        openGallery(project, 0);
+        // Remove the parameter from URL after opening
+        window.history.replaceState({}, '', location.pathname + location.hash.split('?')[0]);
+      }
+    }
+  }, [location.search]);
 
   const nextPhoto = () => {
     if (selectedProject) {

@@ -234,15 +234,7 @@ const References = () => {
                         </p>
                         {project.galleryId && (
                           <Link 
-                            to={`/#galerie`}
-                            onClick={() => {
-                              setTimeout(() => {
-                                const element = document.getElementById(project.galleryId);
-                                if (element) {
-                                  element.scrollIntoView({ behavior: "smooth", block: "center" });
-                                }
-                              }, 100);
-                            }}
+                            to={`/#galerie?open=${project.galleryId}`}
                             className="inline-flex items-center gap-2 mt-4 text-primary hover:text-primary/80 transition-colors font-medium"
                           >
                             <Image className="w-4 h-4" />
