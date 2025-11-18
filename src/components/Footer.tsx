@@ -4,13 +4,11 @@ export const Footer = () => {
       <div className="container px-4">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <div className="flex flex-wrap gap-4 justify-center text-sm">
-            <span className="text-background/70">• Historické památky UNESCO</span>
-            <span className="text-background/70">• Kamenná architektura</span>
-            <span className="text-background/70">• Barokní sochy</span>
-            <span className="text-background/70">• Fasády</span>
+            <span className="text-background/70">• Historické památky UNESCO •</span>
+            <span className="text-background/70">• Kamenná architektura •</span>
+            <span className="text-background/70">• Barokní sochy •</span>
+            <span className="text-background/70">• Fasády •</span>
           </div>
-          
-          <p className="text-sm text-background/60">© {new Date().getFullYear()} Jan Vích. Všechna práva vyhrazena.</p>
         </div>
       </div>
     </footer>
