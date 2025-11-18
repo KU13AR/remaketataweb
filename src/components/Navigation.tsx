@@ -87,7 +87,10 @@ export const Navigation = () => {
       <div className="container px-4 py-4">
         <div className="flex items-center justify-between">
           <button 
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className="text-2xl font-bold tracking-tight hover:text-primary transition-colors"
           >
             ak. soch. Jan Vích
