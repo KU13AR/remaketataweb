@@ -47,6 +47,7 @@ import dobris2 from "@/assets/gallery/dobris-2.jpg";
 import dobris3 from "@/assets/gallery/dobris-3.jpg";
 import dobris5 from "@/assets/gallery/dobris-5.jpg";
 import dobris6 from "@/assets/gallery/dobris-6.jpg";
+import dobris7 from "@/assets/gallery/dobris-7.jpg";
 import hradecKralove1 from "@/assets/gallery/hradec-kralove-1.jpg";
 import hradecKralove2 from "@/assets/gallery/hradec-kralove-2.jpg";
 import hradecKralove3 from "@/assets/gallery/hradec-kralove-3.jpg";
@@ -165,7 +166,8 @@ const projects: Project[] = [
       { url: dobris2 },
       { url: dobris3 },
       { url: dobris5 },
-      { url: dobris6 }
+      { url: dobris6 },
+      { url: dobris7 }
     ]
   },
   {
