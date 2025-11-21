@@ -24,12 +24,12 @@ export const About = () => {
                 Restaurátorské práce provádím na základě povolení MK ČR, č. 6278/91 a 8.001/96. Práce na kulturních památkách jsou prováděny dle Zákona o památkové péči č. 20/1987 Sb., ve znění posledních předpisů.
               </p>
             </div>
-            <div className="lg:w-1/2">
-              <div className="relative rounded-lg overflow-hidden shadow-elegant">
+            <div className="lg:w-1/2 flex justify-center">
+              <div className="relative rounded-lg overflow-hidden shadow-elegant max-w-[300px] w-4/5 md:max-w-md lg:max-w-lg">
                 <img 
                   src={portraitBw} 
                   alt="Jan Vích - Akademický sochař a restaurátor"
-                  className="w-full h-auto"
+                  className="w-full h-auto object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
               </div>
