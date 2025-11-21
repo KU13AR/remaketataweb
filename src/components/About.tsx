@@ -1,4 +1,4 @@
-import janVichPrace from "@/assets/jan-vich-prace.jpg";
+import janVichRestaurovani from "@/assets/jan-vich-restaurovani.jpg";
 
 export const About = () => {
   return (
@@ -27,7 +27,7 @@ export const About = () => {
             <div className="lg:w-1/2 flex justify-center items-start">
               <div className="relative rounded-lg overflow-hidden shadow-elegant max-w-[300px] w-4/5 md:max-w-md lg:max-w-lg">
                 <img 
-                  src={janVichPrace} 
+                  src={janVichRestaurovani} 
                   alt="Jan Vích - Akademický sochař a restaurátor při práci"
                   className="w-full h-full object-cover"
                 />
