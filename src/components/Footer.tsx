@@ -13,7 +13,7 @@ export const Footer = () => {
             <span className="text-background/70">Fasády</span>
           </div>
           
-          <p className="text-sm text-background/60">© 2025 Jan Vích</p>
+          <p className="text-sm text-background/60">© 2025 Jakub Vích</p>
         </div>
       </div>
     </footer>
