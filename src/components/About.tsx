@@ -25,7 +25,7 @@ export const About = () => {
               </p>
             </div>
             <div className="lg:w-1/2 flex justify-center items-start">
-              <div className="relative rounded-lg overflow-hidden shadow-elegant max-w-[300px] w-4/5 md:max-w-md lg:max-w-lg">
+              <div className="relative rounded-lg overflow-hidden shadow-elegant max-w-[400px] w-full md:max-w-lg lg:max-w-xl">
                 <img 
                   src={janVichRestaurovani} 
                   alt="Jan Vích - Akademický sochař a restaurátor při práci"
