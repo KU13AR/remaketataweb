@@ -11,35 +11,32 @@ export const About = () => {
           
           <div className="flex flex-col lg:flex-row gap-8 mb-12">
             <div className="lg:w-1/2 space-y-4">
-              <p className="leading-relaxed text-left text-foreground" style={{ fontSize: 'clamp(1rem, 0.95rem + 0.25vw, 1.125rem)' }}>
+              <p className="text-lg leading-relaxed text-left text-foreground">
                 Narodil jsem se v roce 1952 v Hradci Králové, po ukončení středoškolského obecného vzdělání v Brně jsem absolvoval v letech 1970–1974 studia na Střední odborné škole kamenosochařské v Hořicích v Podkrkonoší. 
               </p>
-              <p className="leading-relaxed text-left text-foreground" style={{ fontSize: 'clamp(1rem, 0.95rem + 0.25vw, 1.125rem)' }}>
+              <p className="text-lg leading-relaxed text-left text-foreground">
                 V letech 1974–1980 jsem studoval na Akademii výtvarných umění v Praze v oboru sochařství se zaměřením na restaurování sochařských děl v kameni. 
               </p>
-              <p className="leading-relaxed text-left text-foreground" style={{ fontSize: 'clamp(1rem, 0.95rem + 0.25vw, 1.125rem)' }}>
+              <p className="text-lg leading-relaxed text-left text-foreground">
                 Od roku 1981 vykonávám samostatnou činnost v oboru.
               </p>
-              <p className="leading-relaxed text-left text-foreground" style={{ fontSize: 'clamp(1rem, 0.95rem + 0.25vw, 1.125rem)' }}>
+              <p className="text-lg leading-relaxed text-left text-foreground">
                 Restaurátorské práce provádím na základě povolení MK ČR, č. 6278/91 a 8.001/96. Práce na kulturních památkách jsou prováděny dle Zákona o památkové péči č. 20/1987 Sb., ve znění posledních předpisů.
               </p>
             </div>
             <div className="lg:w-1/2 flex justify-center items-start">
-              <div className="relative rounded-lg overflow-hidden shadow-elegant w-full" style={{ maxWidth: 'min(400px, 100%)' }}>
-                <div className="relative w-full" style={{ paddingBottom: '133.33%' }}>
-                  <img 
-                    src={janVichRestaurovani} 
-                    alt="Jan Vích - Akademický sochař a restaurátor při práci"
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
+              <div className="relative rounded-lg overflow-hidden shadow-elegant max-w-[400px] w-full md:max-w-lg lg:max-w-xl">
+                <img 
+                  src={janVichRestaurovani} 
+                  alt="Jan Vích - Akademický sochař a restaurátor při práci"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
 
           <div className="prose prose-lg max-w-none space-y-6 text-foreground">
-            <p className="leading-relaxed" style={{ fontSize: 'clamp(1rem, 0.95rem + 0.25vw, 1.125rem)' }}>
+            <p className="text-lg leading-relaxed">
               Dodávám a zajišťuji tyto práce:
             </p>
             

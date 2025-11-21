@@ -267,21 +267,16 @@ export const Gallery = () => {
           </p>
         </div>
 
-        <div className="mx-auto grid gap-6" style={{ 
-          maxWidth: 'min(1400px, 100%)',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))' 
-        }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {projects.map((project, projectIndex) => (
             <Card key={projectIndex} id={project.id} className="overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-300 scroll-mt-24">
               <div className="aspect-[4/3] overflow-hidden bg-muted cursor-pointer" onClick={() => openGallery(project, 0)}>
-                <div className="relative w-full h-full">
-                  <img 
-                    src={project.photos[0].url} 
-                    alt={project.title}
-                    className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    loading="lazy"
-                  />
-                </div>
+                <img 
+                  src={project.photos[0].url} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  loading="lazy"
+                />
               </div>
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
@@ -305,14 +300,12 @@ export const Gallery = () => {
                       className="aspect-square overflow-hidden rounded-md cursor-pointer hover:opacity-75 transition-opacity"
                       onClick={() => openGallery(project, photoIndex)}
                     >
-                      <div className="relative w-full h-full">
-                        <img 
-                          src={photo.url} 
-                          alt={`${project.title} ${photoIndex + 1}`}
-                          className="absolute top-0 left-0 w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
+                      <img 
+                        src={photo.url} 
+                        alt={`${project.title} ${photoIndex + 1}`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
                   ))}
                 </div>
@@ -320,8 +313,7 @@ export const Gallery = () => {
                 {project.photos.length > 4 && (
                   <button
                     onClick={() => openGallery(project, 0)}
-                    className="mt-3 text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center py-2"
-                    style={{ minHeight: '44px' }}
+                    className="mt-3 text-sm text-primary hover:text-primary/80 transition-colors"
                   >
                     Zobrazit všech {project.photos.length} fotografií →
                   </button>
@@ -334,10 +326,7 @@ export const Gallery = () => {
 
       {/* Fullscreen Gallery Dialog */}
       <Dialog open={!!selectedProject} onOpenChange={closeGallery}>
-        <DialogContent className="w-full p-0 gap-0 flex flex-col" style={{ 
-          maxWidth: 'min(1400px, 95vw)',
-          height: 'calc(var(--vh, 1vh) * 90)'
-        }}>
+        <DialogContent className="max-w-7xl w-full h-[90vh] md:h-[95vh] p-0 gap-0 flex flex-col">
           {selectedProject && (
             <>
               <DialogHeader className="px-4 md:px-6 pt-4 md:pt-6 pb-3 md:pb-4 flex-shrink-0">
