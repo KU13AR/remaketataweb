@@ -19,7 +19,9 @@ export const Contact = () => {
               <p className="text-center text-muted-foreground">Akademický sochař a restaurátor</p>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid gap-6" style={{ 
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))' 
+              }}>
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary/30">
                   <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-primary-foreground" />
@@ -28,7 +30,7 @@ export const Contact = () => {
                     <h3 className="font-semibold mb-1">Email</h3>
                     <a 
                       href="mailto:vichrest1@seznam.cz"
-                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors inline-flex items-center py-2"
                     >
                       vichrest1@seznam.cz
                     </a>
@@ -43,7 +45,7 @@ export const Contact = () => {
                     <h3 className="font-semibold mb-1">Telefon</h3>
                     <a 
                       href="tel:+420605268730"
-                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors inline-flex items-center py-2"
                     >
                       +420 605 268 730
                     </a>
@@ -104,7 +106,7 @@ export const Contact = () => {
                       href="https://rrkp.mkcr.cz/rejstrik/9dwBB4Q" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-primary text-sm hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+                      className="text-primary text-sm hover:text-primary/80 transition-colors inline-flex items-center gap-1 py-2"
                     >
                       Rejstřík MK ČR →
                     </a>
