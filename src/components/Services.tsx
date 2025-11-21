@@ -46,8 +46,10 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto space-y-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mx-auto space-y-8" style={{ maxWidth: 'min(1280px, 100%)' }}>
+          <div className="grid gap-6" style={{ 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))' 
+          }}>
             {services.map((service, index) => {
               const Icon = service.icon;
               return (

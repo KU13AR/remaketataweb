@@ -2,7 +2,7 @@ import heroRelief from "@/assets/hero-relief.jpg";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-hero" style={{ minHeight: 'calc(var(--vh, 1vh) * 80)' }}>
       <div className="absolute inset-0 opacity-10">
         <div 
           className="w-full h-full bg-cover bg-center"
@@ -15,11 +15,14 @@ export const Hero = () => {
           {/* Image */}
           <div className="order-2 md:order-1">
             <div className="relative rounded-lg overflow-hidden shadow-elegant">
-              <img 
-                src={heroRelief} 
-                alt="Kamenný reliéf - ukřižování"
-                className="w-full h-auto"
-              />
+              <div className="relative w-full" style={{ paddingBottom: '125%' }}>
+                <img 
+                  src={heroRelief} 
+                  alt="Kamenný reliéf - ukřižování"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  loading="eager"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
             </div>
           </div>
