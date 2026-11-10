@@ -1,6 +1,8 @@
+import { useLanguage } from "@/i18n/useLanguage";
 import heroRelief from "@/assets/hero-relief.jpg";
 
 export const Hero = () => {
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-hero">
       <div className="absolute inset-0 opacity-10">
@@ -17,7 +19,7 @@ export const Hero = () => {
             <div className="relative rounded-lg overflow-hidden shadow-elegant">
               <img 
                 src={heroRelief} 
-                alt="Kamenný reliéf - ukřižování"
+                alt={t("Kamenný reliéf - ukřižování")}
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
@@ -29,13 +31,9 @@ export const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               Jan Vích
             </h1>
-            <p className="text-2xl md:text-3xl text-muted-foreground font-light">
-              Akademický sochař a restaurátor
-            </p>
+            <p className="text-2xl md:text-3xl text-muted-foreground font-light">{t("Akademický sochař a restaurátor")}</p>
             <div className="h-1 w-24 bg-gradient-accent mx-auto md:mx-0 rounded-full" />
-            <p className="text-xl text-muted-foreground max-w-xl">
-              Specializace na restaurování historických památek, sochařských děl v kameni a štuku, kamenné architektury a fasád
-            </p>
+            <p className="text-xl text-muted-foreground max-w-xl">{t("Specializace na restaurování historických památek, sochařských děl v kameni a štuku, kamenné architektury a fasád")}</p>
           </div>
         </div>
       </div>

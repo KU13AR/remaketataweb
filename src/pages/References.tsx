@@ -1,8 +1,9 @@
+import { useLanguage } from "@/i18n/useLanguage";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Image } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 
@@ -195,9 +196,13 @@ const professionalActivities = [
 ];
 
 const References = () => {
+  const { t, path } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    const timer = requestAnimationFrame(() => window.scrollTo(0, typeof location.state?.restoreScroll === "number" ? location.state.restoreScroll : 0));
+    return () => cancelAnimationFrame(timer);
+  }, [location.key]);
 
   return (
     <div className="min-h-screen">
@@ -206,11 +211,9 @@ const References = () => {
       <main className="pt-24 pb-20">
         <div className="container px-4">
           <div className="mb-8">
-            <Link to="/">
+            <Link to={path("/")}>
               <Button variant="ghost" className="gap-2">
-                <ArrowLeft className="w-4 h-4" />
-                Zpět na hlavní stránku
-              </Button>
+                <ArrowLeft className="w-4 h-4" />{t("Zpět na hlavní stránku")}</Button>
             </Link>
           </div>
 
@@ -218,7 +221,7 @@ const References = () => {
             {references.map((section, sectionIndex) => (
               <div key={sectionIndex} className="space-y-6">
                 <h2 className="text-3xl font-bold text-primary border-b pb-3">
-                  {section.period}
+                  {t(section.period)}
                 </h2>
                 <div className="grid gap-6">
                   {section.projects.map((project, projectIndex) => (
@@ -228,7 +231,7 @@ const References = () => {
                     >
                       <CardHeader>
                         <div className="flex items-start justify-between gap-4">
-                          <CardTitle className="text-xl">{project.title}</CardTitle>
+                          <CardTitle className="text-xl">{t(project.title)}</CardTitle>
                           <span className="text-base font-semibold text-primary shrink-0">
                             {project.year}
                           </span>
@@ -236,16 +239,19 @@ const References = () => {
                       </CardHeader>
                       <CardContent>
                         <p className="text-muted-foreground leading-relaxed">
-                          {project.description}
+                          {t(project.description)}
                         </p>
                         {project.galleryId && (
                           <Link 
-                            to={`/#galerie?open=${project.galleryId}&from=reference`}
+                            to={path(`/#galerie?open=${project.galleryId}&from=reference`)}
+                            onClick={(event) => {
+                              if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                              event.preventDefault();
+                              navigate(path(`/#galerie?open=${project.galleryId}&from=reference`), { state: { referenceScroll: window.scrollY } });
+                            }}
                             className="inline-flex items-center gap-2 mt-4 text-primary hover:text-primary/80 transition-colors font-medium"
                           >
-                            <Image className="w-4 h-4" />
-                            Galerie →
-                          </Link>
+                            <Image className="w-4 h-4" />{t("Galerie →")}</Link>
                         )}
                       </CardContent>
                     </Card>
@@ -256,16 +262,14 @@ const References = () => {
 
             {/* Professional Activities Section */}
             <div className="mt-16 space-y-6">
-              <h2 className="text-3xl font-bold text-primary border-b pb-3">
-                Profesní aktivity
-              </h2>
+              <h2 className="text-3xl font-bold text-primary border-b pb-3">{t("Profesní aktivity")}</h2>
               <Card className="shadow-soft hover:shadow-elegant transition-all duration-300">
                 <CardContent className="pt-6">
                   <ul className="space-y-3">
                     {professionalActivities.map((activity, index) => (
                       <li key={index} className="text-muted-foreground leading-relaxed flex items-start gap-3">
                         <span className="text-primary mt-1.5">•</span>
-                        <span>{activity}</span>
+                        <span>{t(activity)}</span>
                       </li>
                     ))}
                   </ul>
@@ -275,13 +279,11 @@ const References = () => {
 
             {/* Collaborators Section */}
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-primary border-b pb-3">
-                Spolupracující restaurátoři
-              </h2>
+              <h2 className="text-3xl font-bold text-primary border-b pb-3">{t("Spolupracující restaurátoři")}</h2>
               <Card className="shadow-soft hover:shadow-elegant transition-all duration-300">
                 <CardContent className="pt-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    {collaborators}
+                    {t(collaborators)}
                   </p>
                 </CardContent>
               </Card>
@@ -289,11 +291,9 @@ const References = () => {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-muted-foreground mb-4">
-              Pro více informací o konkrétních projektech mě neváhejte kontaktovat.
-            </p>
-            <Link to="/#kontakt">
-              <Button>Kontaktovat</Button>
+            <p className="text-muted-foreground mb-4">{t("Pro více informací o konkrétních projektech mě neváhejte kontaktovat.")}</p>
+            <Link to={path("/#kontakt")}>
+              <Button>{t("Kontaktovat")}</Button>
             </Link>
           </div>
         </div>

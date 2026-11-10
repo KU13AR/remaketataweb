@@ -1,22 +1,22 @@
+import { useLanguage } from "@/i18n/useLanguage";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, FileCheck, Briefcase, Inbox } from "lucide-react";
 
 export const Contact = () => {
+  const { t } = useLanguage();
   return (
     <section id="kontakt" className="py-20 bg-gradient-hero">
       <div className="container px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Kontakt</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Rád zodpovím Vaše dotazy a probereme možnosti spolupráce
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("Kontakt")}</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("Rád zodpovím Vaše dotazy a probereme možnosti spolupráce")}</p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <Card className="shadow-elegant">
             <CardHeader>
               <CardTitle className="text-3xl text-center">Jan Vích</CardTitle>
-              <p className="text-center text-muted-foreground">Akademický sochař a restaurátor</p>
+              <p className="text-center text-muted-foreground">{t("Akademický sochař a restaurátor")}</p>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -40,7 +40,7 @@ export const Contact = () => {
                     <Phone className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Telefon</h3>
+                    <h3 className="font-semibold mb-1">{t("Telefon")}</h3>
                     <a 
                       href="tel:+420605268730"
                       className="text-muted-foreground text-sm hover:text-primary transition-colors"
@@ -55,10 +55,8 @@ export const Contact = () => {
                     <Inbox className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Datová schránka</h3>
-                    <p className="text-muted-foreground text-sm">
-                      ID schránky: g4aivre
-                    </p>
+                    <h3 className="font-semibold mb-1">{t("Datová schránka")}</h3>
+                    <p className="text-muted-foreground text-sm">{t("ID schránky: g4aivre")}</p>
                   </div>
                 </div>
 
@@ -67,7 +65,7 @@ export const Contact = () => {
                     <MapPin className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Adresa</h3>
+                    <h3 className="font-semibold mb-1">{t("Adresa")}</h3>
                     <p className="text-muted-foreground text-sm">
                       Pod Saharou 712<br />
                       252 66 Libčice nad Vltavou<br />
@@ -81,13 +79,8 @@ export const Contact = () => {
                     <Briefcase className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Živnostenské oprávnění</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Subjekt: ak.soch. Jan Vích<br />
-                      Vznik: 14. 4. 1993<br />
-                      IČO: 48090395<br />
-                      DIČ: CZ520503370
-                    </p>
+                    <h3 className="font-semibold mb-1">{t("Živnostenské oprávnění")}</h3>
+                    <p className="text-muted-foreground text-sm">{t("Subjekt: ak.soch. Jan Vích")}<br />{t("Vznik: 14. 4. 1993")}<br />{t("IČO: 48090395")}<br />{t("DIČ: CZ520503370")}</p>
                   </div>
                 </div>
 
@@ -96,18 +89,14 @@ export const Contact = () => {
                     <FileCheck className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Povolení - licence</h3>
-                    <p className="text-muted-foreground text-sm mb-2">
-                      MK ČR č. 6278/91 a 8.001/96
-                    </p>
+                    <h3 className="font-semibold mb-1">{t("Povolení - licence")}</h3>
+                    <p className="text-muted-foreground text-sm mb-2">{t("MK ČR č. 6278/91 a 8.001/96")}</p>
                     <a 
                       href="https://rrkp.mkcr.cz/rejstrik/9dwBB4Q" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-primary text-sm hover:text-primary/80 transition-colors inline-flex items-center gap-1"
-                    >
-                      Rejstřík MK ČR →
-                    </a>
+                    >{t("Rejstřík MK ČR →")}</a>
                   </div>
                 </div>
               </div>

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import References from "./pages/References";
 import NotFound from "./pages/NotFound";
+import { PageMetadata } from "./components/PageMetadata";
 
 const queryClient = new QueryClient();
 
@@ -15,9 +16,12 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PageMetadata />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/reference" element={<References />} />
+          <Route path="/en/" element={<Index />} />
+          <Route path="/en/reference/" element={<References />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

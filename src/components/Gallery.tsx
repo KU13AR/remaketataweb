@@ -1,9 +1,10 @@
+import { useLanguage } from "@/i18n/useLanguage";
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Import photos
 import horniPolice1 from "@/assets/gallery/horni-police-1.jpg";
@@ -198,9 +199,11 @@ const projects: Project[] = [
 ];
 
 export const Gallery = () => {
+  const { t, path, isEnglish } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const openGallery = (project: Project, photoIndex: number = 0) => {
     setSelectedProject(project);
@@ -217,9 +220,12 @@ export const Gallery = () => {
       const params = new URLSearchParams(hashParts[1]);
       if (params.get('from') === 'reference') {
         // Navigate back to references
-        window.history.back();
+        const scroll = typeof location.state?.referenceScroll === "number" ? location.state.referenceScroll : 0;
+        navigate(path("/reference"), { replace: true, state: { restoreScroll: scroll } });
+        return;
       }
     }
+    if (location.hash.includes("?open=")) navigate(path("/#galerie"), { replace: true });
   };
 
   // Automatically open project from URL parameter
@@ -234,8 +240,6 @@ export const Gallery = () => {
         const project = projects.find(p => p.id === openProjectId);
         if (project) {
           openGallery(project, 0);
-          // Remove the parameter from URL after opening
-          window.history.replaceState({}, '', location.pathname + hashParts[0]);
         }
       }
     }
@@ -261,10 +265,8 @@ export const Gallery = () => {
     <section id="galerie" className="py-20 bg-card">
       <div className="container px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Galerie</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Výběr z realizovaných restaurátorských projektů
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("Galerie")}</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("Výběr z realizovaných restaurátorských projektů")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
@@ -273,7 +275,7 @@ export const Gallery = () => {
               <div className="aspect-[4/3] overflow-hidden bg-muted cursor-pointer" onClick={() => openGallery(project, 0)}>
                 <img 
                   src={project.photos[0].url} 
-                  alt={project.title}
+                  alt={t(project.title)}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   loading="lazy"
                 />
@@ -284,13 +286,12 @@ export const Gallery = () => {
                     {project.year}
                   </span>
                   <span className="text-xs text-muted-foreground">
-                    {project.photos.length} fotografií
-                  </span>
+                    {project.photos.length}{" "}{t("fotografií")}</span>
                 </div>
-                <CardTitle className="text-lg leading-tight">{project.title}</CardTitle>
+                <CardTitle className="text-lg leading-tight">{t(project.title)}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-sm mb-4">{project.description}</CardDescription>
+                <CardDescription className="text-sm mb-4">{t(project.description)}</CardDescription>
                 
                 {/* Thumbnail grid */}
                 <div className="grid grid-cols-4 gap-2">
@@ -302,7 +303,7 @@ export const Gallery = () => {
                     >
                       <img 
                         src={photo.url} 
-                        alt={`${project.title} ${photoIndex + 1}`}
+                        alt={`${t(project.title)} ${photoIndex + 1}`}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
@@ -311,12 +312,10 @@ export const Gallery = () => {
                 </div>
                 
                 {project.photos.length > 4 && (
-                  <button
+                  <Button variant="link"
                     onClick={() => openGallery(project, 0)}
-                    className="mt-3 text-sm text-primary hover:text-primary/80 transition-colors"
-                  >
-                    Zobrazit všech {project.photos.length} fotografií →
-                  </button>
+                    className="mt-3 text-sm text-primary hover:text-primary/80 transition-colors p-0 h-auto"
+                  >{`${t("Zobrazit všech")} ${project.photos.length} ${t("fotografií →")}`}</Button>
                 )}
               </CardContent>
             </Card>
@@ -326,12 +325,12 @@ export const Gallery = () => {
 
       {/* Fullscreen Gallery Dialog */}
       <Dialog open={!!selectedProject} onOpenChange={closeGallery}>
-        <DialogContent className="max-w-7xl w-full h-[90vh] md:h-[95vh] p-0 gap-0 flex flex-col">
+        <DialogContent aria-describedby={undefined} className="max-w-7xl w-full h-[90vh] md:h-[95vh] p-0 gap-0 flex flex-col">
           {selectedProject && (
             <>
               <DialogHeader className="px-4 md:px-6 pt-4 md:pt-6 pb-3 md:pb-4 flex-shrink-0">
                 <DialogTitle className="text-sm md:text-2xl leading-tight pr-8">
-                  {selectedProject.title}
+                  {t(selectedProject.title)}
                   <span className="text-xs md:text-base font-normal text-muted-foreground ml-2 md:ml-3 block md:inline mt-1 md:mt-0">
                     ({currentPhotoIndex + 1} / {selectedProject.photos.length})
                   </span>
@@ -344,13 +343,14 @@ export const Gallery = () => {
                   size="icon"
                   className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-background/95 hover:bg-background shadow-lg h-12 w-12 md:h-14 md:w-14 rounded-full"
                   onClick={prevPhoto}
+                  aria-label={isEnglish ? "Previous photograph" : "Předchozí fotografie"}
                 >
                   <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
                 </Button>
 
                 <img
                   src={selectedProject.photos[currentPhotoIndex].url}
-                  alt={`${selectedProject.title} ${currentPhotoIndex + 1}`}
+                  alt={`${t(selectedProject.title)} ${currentPhotoIndex + 1}`}
                   className="max-h-full max-w-full w-auto h-auto object-contain"
                   loading="lazy"
                 />
@@ -360,6 +360,7 @@ export const Gallery = () => {
                   size="icon"
                   className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-background/95 hover:bg-background shadow-lg h-12 w-12 md:h-14 md:w-14 rounded-full"
                   onClick={nextPhoto}
+                  aria-label={isEnglish ? "Next photograph" : "Další fotografie"}
                 >
                   <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
                 </Button>
@@ -369,10 +370,12 @@ export const Gallery = () => {
               <div className="px-2 md:px-4 pb-2 md:pb-4 pt-2 border-t bg-background flex-shrink-0">
                 <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
                   {selectedProject.photos.map((photo, index) => (
-                    <button
+                    <Button variant="ghost"
                       key={index}
                       onClick={() => setCurrentPhotoIndex(index)}
-                      className={`flex-shrink-0 w-14 h-14 md:w-24 md:h-24 rounded-md overflow-hidden border-2 transition-all hover:scale-105 ${
+                      aria-label={`${isEnglish ? "Photograph" : "Fotografie"} ${index + 1}`}
+                      aria-pressed={index === currentPhotoIndex}
+                      className={`p-0 flex-shrink-0 w-14 h-14 md:w-24 md:h-24 rounded-md overflow-hidden border-2 transition-all hover:scale-105 ${
                         index === currentPhotoIndex 
                           ? 'border-primary shadow-md' 
                           : 'border-border hover:border-primary/50'
@@ -380,11 +383,11 @@ export const Gallery = () => {
                     >
                       <img
                         src={photo.url}
-                        alt={`Náhled ${index + 1}`}
+                        alt={`${isEnglish ? "Thumbnail" : "Náhled"} ${index + 1}`}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
-                    </button>
+                    </Button>
                   ))}
                 </div>
               </div>

@@ -1,3 +1,4 @@
+import { useLanguage } from "@/i18n/useLanguage";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileSearch, Hammer, Users, ClipboardCheck, FileText, Shield, FolderOpen, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -36,14 +37,13 @@ const services = [
 ];
 
 export const Services = () => {
+  const { t, path } = useLanguage();
   return (
     <section id="sluzby" className="py-20 bg-gradient-hero">
       <div className="container px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Služby</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Komplexní péče o historické památky s důrazem na odbornost a kvalitu
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("Služby")}</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("Komplexní péče o historické památky s důrazem na odbornost a kvalitu")}</p>
         </div>
 
         <div className="max-w-6xl mx-auto space-y-8">
@@ -56,10 +56,10 @@ export const Services = () => {
                     <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-primary-foreground" />
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardTitle className="text-xl">{t(service.title)}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base">{service.description}</CardDescription>
+                    <CardDescription className="text-base">{t(service.description)}</CardDescription>
                   </CardContent>
                 </Card>
               );
@@ -67,7 +67,7 @@ export const Services = () => {
           </div>
 
           {/* Referenční zakázky - široká klikatelná dlaždice */}
-          <Link to="/reference" className="block group">
+          <Link to={path("/reference")} className="block group">
             <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between gap-4">
@@ -76,10 +76,8 @@ export const Services = () => {
                       <FolderOpen className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-1">Referenční zakázky</h3>
-                      <p className="text-muted-foreground text-sm">
-                        Přehled realizovaných projektů a oceněných zakázek včetně památek UNESCO a národních kulturních památek
-                      </p>
+                      <h3 className="text-xl font-semibold mb-1">{t("Referenční zakázky")}</h3>
+                      <p className="text-muted-foreground text-sm">{t("Přehled realizovaných projektů a oceněných zakázek včetně památek UNESCO a národních kulturních památek")}</p>
                     </div>
                   </div>
                   <ChevronRight className="w-6 h-6 text-primary group-hover:translate-x-1 transition-transform flex-shrink-0" />
